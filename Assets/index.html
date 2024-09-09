@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-89">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Website Joaquin</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!------------------------------------HEADER------------------------------->
+<div id="header">
+    <div class ="container">
+        <nav>
+            <img src="Images/logo.png" class="logo">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-text">
+            <p>Game Developer</p>
+            <h1>Hi, I'm <span>Joaquin Verhelst</span><br>From Belgium </h1>
+        </div>
+    </div>
+</div>
+<!------------------------------------ABOUT------------------------------->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="Images/user.jpg">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me </h1>
+                <p> Wealth. Fame. Power. The man who had everything in this world... The Pirate King, Gold Roger. 
+                    The great treasure he left behind, One Piece has opened the curtain on a grand era! 
+                    It is a time when eager pirates set sail, battle, and become great! The Great Age of Pirates!
+                    Words he spoke drove countless men out to sea. And so men set sights on the Grand Line, in pursuit of their dreams.
+                    The world has truly entered a Great Pirate Era!</p>
+                
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>GD</span><br>Game Developer/programmer</li>
+                        <li><span>Unity</span><br>Games</li>
+                        <li><span>Unreal Engine 5</span><br>Games</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>2020- Current</span><br>DAE Student</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>Secundairy School</span><br>Wetenschappen Wiskunde - Sint-GummarusCollege</li>
+                        <li><span>Univeristy</span><br>DAE</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links")
+    var tabcontents = document.getElementsByClassName("tab-contents")
+    function opentab(tabname)
+    {
+        for (tablink of tablinks)
+        {
+            tablink.classList.remove("active-link")
+        }
+        for (tabcontent of tabcontents)
+        {
+            tabcontent.classList.remove("active-tab")
+        }
+        
+        event.currentTarget.classList.add("active-link")
+        document.getElementById(tabname).classList.add("active-tab");
+        
+        
+    }
+    
+</script>
+
+
+</body>
+</html>
