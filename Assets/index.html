@@ -6,92 +6,326 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio Website Joaquin</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/00d7ca3016.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
-<!------------------------------------HEADER------------------------------->
-<div id="header">
-    <div class ="container">
-        <nav>
-            <img src="Images/logo.png" class="logo">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="header-text">
+    <!------------------------------------HEADER------------------------------->
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="Images/logo.png" class="logo">
+
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
             <p>Game Developer</p>
-            <h1>Hi, I'm <span>Joaquin Verhelst</span><br>From Belgium </h1>
         </div>
     </div>
-</div>
-<!------------------------------------ABOUT------------------------------->
-<div id="about">
-    <div class="container">
-        <div class="row">
-            <div class="about-col-1">
-                <img src="Images/user.jpg">
-            </div>
-            <div class="about-col-2">
-                <h1 class="sub-title">About Me </h1>
-                <p> Wealth. Fame. Power. The man who had everything in this world... The Pirate King, Gold Roger. 
-                    The great treasure he left behind, One Piece has opened the curtain on a grand era! 
-                    It is a time when eager pirates set sail, battle, and become great! The Great Age of Pirates!
-                    Words he spoke drove countless men out to sea. And so men set sights on the Grand Line, in pursuit of their dreams.
-                    The world has truly entered a Great Pirate Era!</p>
-                
-                <div class="tab-titles">
-                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
-                    <p class="tab-links" onclick="opentab('education')">Education</p>
+    <!------------------------------------ABOUT------------------------------->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="Images/user.jpg">
                 </div>
-                <div class="tab-contents active-tab" id="skills">
-                    <ul>
-                        <li><span>GD</span><br>Game Developer/programmer</li>
-                        <li><span>Unity</span><br>Games</li>
-                        <li><span>Unreal Engine 5</span><br>Games</li>
-                    </ul>
-                </div>
-                <div class="tab-contents" id="experience">
-                    <ul>
-                        <li><span>2020- Current</span><br>DAE Student</li>
-                    </ul>
-                </div>
-                <div class="tab-contents" id="education">
-                    <ul>
-                        <li><span>Secundairy School</span><br>Wetenschappen Wiskunde - Sint-GummarusCollege</li>
-                        <li><span>Univeristy</span><br>DAE</li>
-                    </ul>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me </h1>
+                    <p>
+                        Wealth. Fame. Power. The man who had everything in this world... The Pirate King, Gold Roger.
+                        The great treasure he left behind, One Piece has opened the curtain on a grand era!
+                        It is a time when eager pirates set sail, battle, and become great! The Great Age of Pirates!
+                        Words he spoke drove countless men out to sea. And so men set sights on the Grand Line, in pursuit of their dreams.
+                        The world has truly entered a Great Pirate Era!
+                    </p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>GD</span><br>Game Developer/programmer</li>
+                            <li><span>Unity</span><br>Games</li>
+                            <li><span>Unreal Engine 5</span><br>Games</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2020- Current</span><br>DAE Student</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>Secundairy School</span><br>Wetenschappen Wiskunde - Sint-GummarusCollege</li>
+                            <li><span>Univeristy</span><br>DAE</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<script>
 
-    var tablinks = document.getElementsByClassName("tab-links")
-    var tabcontents = document.getElementsByClassName("tab-contents")
-    function opentab(tabname)
-    {
-        for (tablink of tablinks)
-        {
-            tablink.classList.remove("active-link")
+    <!------------------------------------Portofolio------------------------------->
+    <!--                        -->
+    <div id="portofolio">
+        <div class="container">
+            <h1 class="sub-title">Game Projects</h1>
+            <div class="project-list">
+                <!--Binary Bandits-->
+                <div class="project" data-bg="images/BinaryBanditsBG.png" data-project="1">
+                    <img src="images/BinaryBandits.png" class="thumbnail" />
+                    <img src="images/BinaryBandits.png" class="hover-image" style="display: none;" />
+                </div>
+                <!--Flora Frenzy-->
+                <div class="project" data-project="2">
+                    <img src="images/FloraFrenzy.png" class="thumbnail" />
+                    <img src="images/FloraFrenzy.png" class="hover-image" style="display: none;" />
+                </div>
+                <!--Reach The Peak-->
+                <div class="project" data-project="3">
+                    <img src="images/ReachThePeak.png" class="thumbnail" />
+                    <img src="images/ReachThePeak.gif" class="hover-image" style="display: none;" />
+                </div>
+                <!--Jotar 2D Engine-->
+                <div class="project" data-project="4">
+                    <img src="images/JotarEngine.png" class="thumbnail" />
+                    <img src="images/JotarEngine.png" class="hover-image" style="display: none;" />
+                </div>
+                <!--Bomberman-->
+                <div class="project" data-project="5">
+                    <img src="images/Bomberman.png" class="thumbnail" />
+                    <img src="images/Bomberman.png" class="hover-image" style="display: none;" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal structure -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <div id="modal-body">
+
+                <!-- Content will be injected here -->
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+    <!--<div id="portofolio">
+        <div class="container">
+            <h1 class="sub-title">Additional Projects</h1>
+            <div class="project-list">
+                <div class="project">
+                    <img src="images/DualRasterizer.png" />
+
+                </div>
+                <div class="project">
+                    <img src="images/VulkanProject.png" />
+                </div>
+            </div>
+        </div>
+    </div>-->
+
+
+
+    <!-- HTML Templates for different projects -->
+    <div id="project-templates" style="display: none;">
+
+        <!--Binary Bandits-->
+        <div id="project-1">
+            <h2>Binary Bandits</h2>
+            <p>Ever imagined yourself and your best mate as a killer spy and cunning hacker duo? If that's you, then get ready to boogie in Binary Bandits, a local co-op puzzle game that takes you straight back to the late 70s.</p>
+            <h3>About the Game</h3>
+            <p>Binary Bandits is a local co-op puzzle game, where one player has to move the spy, while your partner can hack the objects around the spy to help you get further to complete your objective. </p>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/OkSxKvIIl4w" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="link-container">
+                <a href="https://rasahalune.itch.io/binarybandits"><i class="fa-brands fa-itch-io"></i></a>
+            </div>
+        </div>
+
+        <!--Flora Frenzy-->
+        <div id="project-2">
+            <h2>Flora Frenzy</h2>
+            <p>Flora Frenzy is an action-packed shooter adventure game in which you have to escape from a hostile alien planet. Fight your way through waves of plant-based enemies, use different combat abilities and smoothly manoever your way across the levels. It's time to kick some plant butt!</p>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/o7ros9kLGYE" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="link-container">
+                <a href="https://ethannelis.itch.io/flora-frenzy"><i class="fa-brands fa-itch-io"></i></a>
+            </div>
+        </div>
+
+        <!--Reach The Peak-->
+        <div id="project-3">
+            <h2>Reach The Peak</h2>
+            <p>Reach The Peak (working title) is a multiplayer coop game where you need to survive in an endless maze of Dungeons. Collect skill books to gain Attacks, Defencive and utility skills to make you life easier. You need to become stronger to get further and reach the peak of your Skills to Escape this Abyss of Dungeons! </p>
+  
+            <div class="link-container">
+                <a href="https://github.com/JoaquinVerhelst/ReachThePeak"><i class="fa-brands fa-github"></i></a>
+                <a href="https://ethannelis.itch.io/flora-frenzy"><i class="fa-brands fa-itch-io"></i></a>
+            </div>
+
+
+        </div>
+
+        <!--Jotar 2D Engine -->
+        <div id="project-4">
+            <h2>Jotar 2D Engine</h2>
+            <p>This is the description for Jotar 2D Engine.</p>
+            <div>
+                <h3>Technical Details</h3>
+                <p>Some technical details about Jotar 2D Engine.</p>
+            </div>
+            <div>
+                <h3>Code Explanation</h3>
+                <pre><code>&lt;div&gt;Sample code for Project 1&lt;/div&gt;</code></pre>
+            </div>
+        </div>
+
+        <!--Bomberman-->
+        <div id="project-5">
+            <h2>Bomberman</h2>
+            <p>This is the description for Bomberman.</p>
+            <div>
+                <h3>Technical Details</h3>
+                <p>Some technical details about Project 5.</p>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <script>
+
+        var tablinks = document.getElementsByClassName("tab-links")
+        var tabcontents = document.getElementsByClassName("tab-contents")
+        function opentab(tabname) {
+            for (tablink of tablinks) {
+                tablink.classList.remove("active-link")
+            }
+            for (tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab")
+            }
+
+            event.currentTarget.classList.add("active-link")
+            document.getElementById(tabname).classList.add("active-tab");
+
+
         }
-        for (tabcontent of tabcontents)
-        {
-            tabcontent.classList.remove("active-tab")
+
+        // Handle hover to show GIF or YouTube
+        document.querySelectorAll('.project').forEach(project => {
+            const thumbnail = project.querySelector('.thumbnail');
+            const hoverImage = project.querySelector('.hover-image');
+
+            // Show the GIF or video on hover
+            project.addEventListener('mouseenter', () => {
+                thumbnail.style.display = 'none';
+                hoverImage.style.display = 'block'; // Show GIF or play video
+            });
+
+            project.addEventListener('mouseleave', () => {
+                thumbnail.style.display = 'block';
+                hoverImage.style.display = 'none'; // Hide GIF or pause video
+            });
+
+            // Open modal on click
+            project.addEventListener('click', () => {
+                const modal = document.getElementById('myModal');
+                const modalBody = document.getElementById('modal-body');
+
+                const BGdata = project.getAttribute('data-bg');
+
+                //if (BGdata) {
+                //    modalBody.style.backgroundImage = `url('${BGdata}')`;
+                //}
+ 
+
+                // Get the project ID
+                const projectId = project.getAttribute('data-project');
+
+                // Clear existing modal content
+                modalBody.innerHTML = '';
+
+                // Get the template for the clicked project
+                const template = document.querySelector(`#project-templates #project-${projectId}`);
+
+                // Clone and append the content from the template into the modal
+                if (template) {
+                    const clone = template.cloneNode(true);
+                    clone.style.display = 'block'; // Ensure the cloned content is visible
+                    modalBody.appendChild(clone);
+                }
+
+                // Show modal
+                modal.style.display = 'flex';
+            });
+        });
+
+
+        // Get the modal and close button
+        const modal = document.getElementById('myModal');
+        const closeModalBtn = document.querySelector('.close-modal');
+
+        // Function to open the modal
+        function openModal(videoSrc) {
+            modal.style.display = 'block';
+            const iframe = modal.querySelector('iframe');
+            iframe.src = videoSrc; // Set the iframe src to start the video
         }
-        
-        event.currentTarget.classList.add("active-link")
-        document.getElementById(tabname).classList.add("active-tab");
-        
-        
-    }
-    
-</script>
+
+        // Function to close the modal
+        closeModalBtn.addEventListener('click', function () {
+            modal.style.display = 'none';
+            const iframe = modal.querySelector('iframe');
+            iframe.src = ''; // Remove the src to stop the video
+        });
+
+        // Close modal when clicking outside of it
+        window.addEventListener('click', function (event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+                const iframe = modal.querySelector('iframe');
+                iframe.src = ''; // Remove the src to stop the video
+            }
+        });
+
+
+
+
+        //// Close modal
+        //document.querySelector('.close-modal').addEventListener('click', () => {
+        //    const modal = document.getElementById('myModal');
+        //    modal.style.display = 'none';
+        //});
+
+        //// Close modal when clicking outside the modal content
+        //document.getElementById('myModal').addEventListener('click', (event) => {
+        //    const modal = document.getElementById('myModal');
+        //    if (event.target === modal) {
+        //        modal.style.display = 'none'; // Close the modal
+        //    }
+        //});
+
+
+
+    </script>
 
 
 </body>

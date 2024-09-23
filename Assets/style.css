@@ -12,8 +12,8 @@ body{
 
 #header{
     width: 100%;
-    height: 100vh;
-    background-image: url(images/background.png);
+    /*height: 100vh;*/
+    /*background-image: url(images/background.png);*/
     background-size: cover;
     background-position: center;
 }
@@ -154,4 +154,180 @@ nav ul li a:hover::after{
 
 .tab-contents.active-tab{
     display: block;
+}
+
+
+/* ----------------------------Portofolio------------------------------------*/
+
+
+#portofolio{
+    padding: 50px 0;
+}
+
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+    margin-top: 50px auto 0;
+    justify-items: center;
+}
+
+.project {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    width: 100%;
+    max-width: 700px;
+    aspect-ratio: 5 / 3;
+}
+
+.project img {
+    width: 100%;
+    height: 100%; 
+    object-fit: cover; 
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+
+.project:hover{
+    transform: scale(1.1);
+}
+
+
+.modal {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Dark background */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    background-size: contain;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat;
+}
+
+.hover-image {
+    display: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+.project:hover .hover-image {
+    display: block;
+
+}
+
+.project:hover .thumbnail {
+    display: none;
+}
+
+
+.modal-content {
+    background: black;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    position: relative;
+    margin: 0 auto; /* Center the modal */
+    /*box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);  Optional: add shadow */
+    background-size: contain;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat;
+    border: 2px solid white; /* Add a white border */
+}
+
+/* Add padding to text elements */
+.modal-content h2,
+.modal-content p {
+    padding: 10px 20px; /* Add padding around text elements */
+    margin: 0; /* Reset margin to avoid extra space */
+}
+
+
+/* Add padding for videos */
+.modal-content iframe {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 20px 0; /* Add margin above and below the video */
+    padding: 10px; /* Optional: internal padding for iframe */
+    border-radius: 10px; /* Optional: rounded edges for videos */
+}
+
+/* Close button styles */
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: white;
+}
+
+/*.modal-content img, .modal-content iframe {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+*/
+/* Add padding for images */
+.modal-content img {
+    width: 100%; /* Ensure images take full width */
+    height: auto; /* Maintain aspect ratio */
+    margin: 20px 0; /* Add margin above and below images */
+    border-radius: 10px; /* Optional: rounded corners for images */
+    padding: 10px; /* Internal padding for images (optional) */
+    object-fit: cover; /* Ensure the image covers the available space */
+}
+
+/*.work-list .work:nth-child(odd):last-child {
+    grid-column: span 2;*/ /* Span across both columns */
+    /*width: 100%;*/ /* Full width */
+/*}*/
+
+
+.video-container {
+    position: relative;
+    width: 100%; /* Use full width of the parent container */
+    padding-top: 56.25%;
+    overflow: hidden; /* Hide overflow */
+    bottom: 10px;
+}
+
+.video-container iframe {
+    position: absolute; /* Position the iframe absolutely within the container */
+    top: 10px; /* Align to the top */
+
+    left: 0; /* Align to the left */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+}
+
+.link-container {
+    display: flex; /* Optional: Center the icon */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+.link-container a {
+    font-size: 36px; /* Adjust size as needed */
+    color: white; /* Change color as desired */
+    transition: transform 0.2s; /* Optional: Add hover effect */
+}
+
+.link-container a:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
 }
