@@ -82,26 +82,73 @@
                 <div class="project" data-bg="images/BinaryBanditsBG.png" data-project="1">
                     <img src="images/BinaryBandits.png" class="thumbnail" />
                     <img src="images/BinaryBandits.png" class="hover-image" style="display: none;" />
+
+
+                    <div class="tags">
+                        <span class="tag" data-color="#">Group Project</span>
+                        <span class="tag" data-color="#">Game</span>
+                        <span class="tag" data-color="#e74c3c">C++</span>
+                        <span class="tag" data-color="#e74c3c">Unreal Engine 5</span>
+                        <span class="tag" data-color="#2ecc71">Released</span>
+                    </div>
+
                 </div>
                 <!--Flora Frenzy-->
                 <div class="project" data-project="2">
                     <img src="images/FloraFrenzy.png" class="thumbnail" />
                     <img src="images/FloraFrenzy.png" class="hover-image" style="display: none;" />
+
+
+                    <div class="tags">
+                        <span class="tag" data-color="#">Group Project</span>
+                        <span class="tag" data-color="#">Game</span>
+                        <span class="tag" data-color="#e74c3c">C++</span>
+                        <span class="tag" data-color="#e74c3c">Unreal Engine 5</span>
+                        <span class="tag" data-color="#2ecc71">Released</span>
+                    </div>
+
                 </div>
                 <!--Reach The Peak-->
                 <div class="project" data-project="3">
                     <img src="images/ReachThePeak.png" class="thumbnail" />
                     <img src="images/ReachThePeak.gif" class="hover-image" style="display: none;" />
+
+
+                    <div class="tags">
+                        <span class="tag" data-color="#">Solo</span>
+                        <span class="tag" data-color="#">Game</span>
+                        <span class="tag" data-color="#e74c3c">C#</span>
+                        <span class="tag" data-color="#e74c3c">Unity</span>
+                        <span class="tag" data-color="#2ecc71">Active Development</span>
+                    </div>
+
+
                 </div>
                 <!--Jotar 2D Engine-->
                 <div class="project" data-project="4">
                     <img src="images/JotarEngine.png" class="thumbnail" />
                     <img src="images/JotarEngine.png" class="hover-image" style="display: none;" />
+
+
+                    <div class="tags">
+                        <span class="tag" data-color="#">Solo</span>
+                        <span class="tag" data-color="#">2d Engine</span>
+                        <span class="tag" data-color="#e74c3c">C++</span>
+                        <span class="tag" data-color="#2ecc71">On Hold</span>
+                    </div>
                 </div>
                 <!--Bomberman-->
                 <div class="project" data-project="5">
                     <img src="images/Bomberman.png" class="thumbnail" />
                     <img src="images/Bomberman.png" class="hover-image" style="display: none;" />
+
+
+                    <div class="tags">
+                        <span class="tag" data-color="#">Solo</span>
+                        <span class="tag" data-color="#">Game</span>
+                        <span class="tag" data-color="#e74c3c">C++</span>
+                        <span class="tag" data-color="#2ecc71">Released</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -233,6 +280,16 @@
         document.querySelectorAll('.project').forEach(project => {
             const thumbnail = project.querySelector('.thumbnail');
             const hoverImage = project.querySelector('.hover-image');
+
+            const tags = project.querySelectorAll('.tag');
+
+            tags.forEach(tag => {
+                const tagColor = tag.getAttribute('data-color');
+                if (tagColor) {
+                    tag.style.backgroundColor = tagColor;
+                }
+            });
+
 
             // Show the GIF or video on hover
             project.addEventListener('mouseenter', () => {
