@@ -1,0 +1,614 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-89">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Website Joaquin</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/00d7ca3016.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <!------------------------------------HEADER------------------------------->
+    <div id="header">
+        <div class="container">
+            <nav>
+                <picture class="logo">
+                    <source srcset="Images/logo-small.png" media="(max-width: 800px)">
+                    <source srcset="Images/logo.png" media="(min-width: 801px)">
+                    <img src="Images/logo.png" alt="Logo">
+                </picture>
+
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portofolio">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="CloseMenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="OpenMenu()"></i>
+            </nav>
+            <p>Game Developer</p>
+        </div>
+    </div>
+    <!------------------------------------ABOUT------------------------------->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="Images/user.jpg">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">Welcome!</h1>
+                    <p>
+                        Wealth. Fame. Power. The man who had everything in this world... The Pirate King, Gold Roger.
+                        The great treasure he left behind, One Piece has opened the curtain on a grand era!
+                        It is a time when eager pirates set sail, battle, and become great! The Great Age of Pirates!
+                        Words he spoke drove countless men out to sea. And so men set sights on the Grand Line, in pursuit of their dreams.
+                        The world has truly entered a Great Pirate Era!
+                    </p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>GD</span><br>Game Developer/programmer</li>
+                            <li><span>Unity</span><br>Games</li>
+                            <li><span>Unreal Engine 5</span><br>Games</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2020- Current</span><br>DAE Student</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>Secundairy School</span><br>Wetenschappen Wiskunde - Sint-GummarusCollege</li>
+                            <li><span>Univeristy</span><br>DAE</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--------------------------------------------------------------------------Portofolio---------------------------------------------------------------------------------------------->
+    <!--                        -->
+    <div id="portofolio">
+        <div class="container">
+            <h1 class="sub-title">Game Projects</h1>
+            <div class="project-list">
+                <!--Binary Bandits-->
+                <div class="project" data-bg="images/BinaryBanditsBG.png" data-project="1">
+                    <img src="images/BinaryBandits.png" class="thumbnail" />
+                    <img src="images/BinaryBandits.png" class="hover-image" style="display: none;" />
+
+
+                    <div class="tags">
+                        <span class="tag" data-color="#">Group Project</span>
+                        <span class="tag" data-color="#">Game</span>
+                        <span class="tag" data-color="#e74c3c">C++</span>
+                        <span class="tag" data-color="#e74c3c">Unreal Engine 5</span>
+                        <span class="tag" data-color="#2ecc71">Released</span>
+                    </div>
+
+                </div>
+                <!--Flora Frenzy-->
+                <div class="project" data-project="2">
+                    <img src="images/FloraFrenzy.png" class="thumbnail" />
+                    <img src="images/FloraFrenzy.png" class="hover-image" style="display: none;" />
+
+
+                    <div class="tags">
+                        <span class="tag" data-color="#">Group Project</span>
+                        <span class="tag" data-color="#">Game</span>
+                        <span class="tag" data-color="#e74c3c">C++</span>
+                        <span class="tag" data-color="#e74c3c">Unreal Engine 5</span>
+                        <span class="tag" data-color="#2ecc71">Released</span>
+                    </div>
+
+                </div>
+                <!--Reach The Peak-->
+                <div class="project" data-project="3">
+                    <img src="images/ReachThePeak/ReachThePeak.png" class="thumbnail" />
+                    <img src="images/ReachThePeak/ReachThePeak.png" class="hover-image" style="display: none;" />
+
+
+                    <div class="tags">
+                        <span class="tag" data-color="#">Solo</span>
+                        <span class="tag" data-color="#">Game</span>
+                        <span class="tag" data-color="#e74c3c">C#</span>
+                        <span class="tag" data-color="#e74c3c">Unity</span>
+                        <span class="tag" data-color="#2ecc71">Active Development</span>
+                    </div>
+
+
+                </div>
+
+                <!--Bomberman-->
+                <div class="project" data-project="5">
+                    <img src="images/Bomberman.png" class="thumbnail" />
+                    <img src="images/Bomberman.png" class="hover-image" style="display: none;" />
+
+
+                    <div class="tags">
+                        <span class="tag" data-color="#">Solo</span>
+                        <span class="tag" data-color="#">Game</span>
+                        <span class="tag" data-color="#e74c3c">C++</span>
+                        <span class="tag" data-color="#2ecc71">Released</span>
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal structure -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <div id="modal-body">
+
+                <!-- Content will be injected here -->
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+    <!-- HTML Templates for different projects -->
+    <div id="project-templates" style="display: none;">
+
+        <!--Binary Bandits-->
+        <div id="project-1">
+            <h2>Binary Bandits</h2>
+            <p>Ever imagined yourself and your best mate as a killer spy and cunning hacker duo? If that's you, then get ready to boogie in Binary Bandits, a local co-op puzzle game that takes you straight back to the late 70s.</p>
+            <h3>About the Game</h3>
+            <p>Binary Bandits is a local co-op puzzle game, where one player has to move the spy, while your partner can hack the objects around the spy to help you get further to complete your objective. </p>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/OkSxKvIIl4w" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="link-container">
+                <a href="https://rasahalune.itch.io/binarybandits"><i class="fa-brands fa-itch-io"></i></a>
+            </div>
+
+            <div class="project-info">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Engine</th>
+                            <th>Language</th>
+                            <th>Programmer</th>
+                            <th>Artists</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Unreal Engine 5</td>
+                            <td>C++</td>
+                            <td>Joaquin Verhelst</td>
+                            <td><a href="#">Lev Dukhovnyi</a></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"></td> <!-- Empty cells to span the previous columns -->
+                            <td><a href="#">Sarah-Luna Van Steen</a></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"></td>
+                            <td><a href="#">Ruben Verhelst</a></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"></td>
+                            <td><a href="#">Ebbo Gyssels</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+        <!--Flora Frenzy-->
+        <div id="project-2">
+            <h2>Flora Frenzy</h2>
+            <p>Flora Frenzy is an action-packed shooter adventure game in which you have to escape from a hostile alien planet. Fight your way through waves of plant-based enemies, use different combat abilities and smoothly manoever your way across the levels. It's time to kick some plant butt!</p>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/o7ros9kLGYE" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="link-container">
+                <a href="https://ethannelis.itch.io/flora-frenzy"><i class="fa-brands fa-itch-io"></i></a>
+            </div>
+
+            <div class="project-info">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Engine</th>
+                            <th>Language</th>
+                            <th>Programmer</th>
+                            <th>Artists</th>
+                            <th>Sound Designer</th>
+                            <th>Game Designer</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Unreal Engine 5</td>
+                            <td>C++</td>
+                            <td>Joaquin Verhelst</td>
+                            <td><a href="#">Anouk van Uffelen</a></td>
+                            <td><a href="#">Jake Wheaton</a></td>
+                            <td><a href="#">Ethan Nelis</a></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"></td> <!-- Empty cells to span the previous columns -->
+                            <td><a href="#">Sacha Gonzalez De Muer</a></td>
+                            <td><a href="#">Joan Tieu</a></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"></td>
+                            <td><a href="#">Shawn Perlado Calapaca</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+        </div>
+
+        <!--Reach The Peak-->
+        <div id="project-3">
+            <h2>Reach The Peak</h2>
+            <p>Reach The Peak (working title) is a multiplayer coop game where you need to survive in an endless maze of Dungeons. Collect skill books to gain Attacks, Defencive and utility skills to make you life easier. You need to become stronger to get further and reach the peak of your Skills to Escape this Abyss of Dungeons! </p>
+
+            <div class="gif-container">
+                <img src="images/ReachThePeak/FightEnemy.gif" />
+                <img src="images/ReachThePeak/ScrollToolBar.gif" />
+                <img src="images/ReachThePeak/SkillShowCase.gif" />
+            </div>
+
+            <div class="link-container">
+                <a href="https://github.com/JoaquinVerhelst/ReachThePeak"><i class="fa-brands fa-github"></i></a>
+                <a href="https://joquillan.itch.io/reach-the-peak"><i class="fa-brands fa-itch-io"></i></a>
+            </div>
+
+
+            <div class="project-info">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Engine</th>
+                            <th>Language</th>
+                            <th>Programmer</th>
+                            <th>Artists</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Unity</td>
+                            <td>C#</td>
+                            <td>Julian Rijken</td>
+                            <td><a href="#">Jonne Keizer</a></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"></td> <!-- Empty cells to span the previous columns -->
+                            <td>Justin Knobbout</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+        <!--Bomberman-->
+        <div id="project-5">
+            <h2>Bomberman</h2>
+            <p>This is the description for Bomberman.</p>
+            <div>
+                <h3>Technical Details</h3>
+                <p>Some technical details about Project 5.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!----------------------------------------------------------Other Projects ---------------------------------------------------------------------------->
+
+
+
+
+    <div id="otherProjects">
+        <div class="container">
+            <h1 class="sub-title">Other Projects</h1>
+
+            <div class="project-list">
+
+                <!--Jotar 2D Engine-->
+                <div class="project" data-project="o-1">
+                    <img src="images/JotarEngine.png" class="thumbnail" />
+                    <img src="images/JotarEngine.png" class="hover-image" style="display: none;" />
+
+
+                    <div class="tags">
+                        <span class="tag" data-color="#">Solo</span>
+                        <span class="tag" data-color="#">2d Engine</span>
+                        <span class="tag" data-color="#e74c3c">C++</span>
+                        <span class="tag" data-color="#2ecc71">On Hold</span>
+                    </div>
+                </div>
+
+
+                <!--Dual Rastrizer-->
+                <div class="project" data-bg="images/BinaryBanditsBG.png" data-project="o-2">
+                    <img src="images/BinaryBandits.png" class="thumbnail" />
+                    <img src="images/BinaryBandits.png" class="hover-image" style="display: none;" />
+
+                </div>
+
+
+                <!--Vulkan project -->
+                <div class="project" data-bg="images/BinaryBanditsBG.png" data-project="o-3">
+                    <img src="images/BinaryBandits.png" class="thumbnail" />
+                    <img src="images/BinaryBandits.png" class="hover-image" style="display: none;" />
+
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div id="project-templates" style="display: none;">
+
+        <!--Jotar 2D Engine -->
+        <div id="project-o-1">
+            <h2>Jotar 2D Engine</h2>
+            <p>This is the description for Jotar 2D Engine.</p>
+            <div>
+                <h3>Technical Details</h3>
+                <p>Some technical details about Jotar 2D Engine.</p>
+            </div>
+            <div>
+                <h3>Code Explanation</h3>
+                <pre><code>&lt;div&gt;Sample code for Project 1&lt;/div&gt;</code></pre>
+            </div>
+        </div>
+
+        <div id="project-o-2">
+            <h2>Dual Rastrizer</h2>
+            <p>Ever imagined yourself and your best mate as a killer spy and cunning hacker duo? If that's you, then get ready to boogie in Binary Bandits, a local co-op puzzle game that takes you straight back to the late 70s.</p>
+            <h3>About the Game</h3>
+            <p>Binary Bandits is a local co-op puzzle game, where one player has to move the spy, while your partner can hack the objects around the spy to help you get further to complete your objective. </p>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/OkSxKvIIl4w" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="link-container">
+                <a href="https://rasahalune.itch.io/binarybandits"><i class="fa-brands fa-itch-io"></i></a>
+            </div>
+        </div>
+
+        <div id="project-o-3">
+            <h2>Vulkan Project</h2>
+            <p>Ever imagined yourself and your best mate as a killer spy and cunning hacker duo? If that's you, then get ready to boogie in Binary Bandits, a local co-op puzzle game that takes you straight back to the late 70s.</p>
+            <h3>About the Game</h3>
+            <p>Binary Bandits is a local co-op puzzle game, where one player has to move the spy, while your partner can hack the objects around the spy to help you get further to complete your objective. </p>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/OkSxKvIIl4w" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="link-container">
+                <a href="https://rasahalune.itch.io/binarybandits"><i class="fa-brands fa-itch-io"></i></a>
+            </div>
+        </div>
+
+
+    </div>
+
+    <!---------------------------------------------------------------------CONTACT ----------------------------------------------------------------------------->
+
+
+
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fa-solid fa-envelope"></i> Joaquin.verhelst@hotmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i> +32 468 21 38 66</p>
+                    <div class="social-icons">
+                        <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                        <a href=""><i class="fa-brands fa-itch-io"></i></a>
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                    <a href="Images/cv_Joaquin_Verhelst.docx" download class="btn btn2">DownLoad CV</a>
+                </div>
+                <div class="contact-right">
+                    <form method="post" action="https://api.web3forms.com/submit">
+
+                        <input type="hidden" name="access_key" value="198262aa-55ad-4799-a81c-2fb4b4879e36">
+
+                        <input type="text" name="Name" placeholder="Your Name" required />
+                        <input type="email" name="Email" placeholder="Your Email" required />
+                        <textarea name="message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="Submit" class="btn btn2">Submit</button>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+
+        var tablinks = document.getElementsByClassName("tab-links")
+        var tabcontents = document.getElementsByClassName("tab-contents")
+        function opentab(tabname) {
+            for (tablink of tablinks) {
+                tablink.classList.remove("active-link")
+            }
+            for (tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab")
+            }
+
+            event.currentTarget.classList.add("active-link")
+            document.getElementById(tabname).classList.add("active-tab");
+
+
+        }
+
+        // Handle hover to show GIF or YouTube
+        document.querySelectorAll('.project').forEach(project => {
+            const thumbnail = project.querySelector('.thumbnail');
+            const hoverImage = project.querySelector('.hover-image');
+
+            const tags = project.querySelectorAll('.tag');
+
+            tags.forEach(tag => {
+                const tagColor = tag.getAttribute('data-color');
+                if (tagColor) {
+                    tag.style.backgroundColor = tagColor;
+                }
+            });
+
+
+            // Show the GIF or video on hover
+            project.addEventListener('mouseenter', () => {
+                thumbnail.style.display = 'none';
+                hoverImage.style.display = 'block'; // Show GIF or play video
+            });
+
+            project.addEventListener('mouseleave', () => {
+                thumbnail.style.display = 'block';
+                hoverImage.style.display = 'none'; // Hide GIF or pause video
+            });
+
+            // Open modal on click
+            project.addEventListener('click', () => {
+                const modal = document.getElementById('myModal');
+                const modalBody = document.getElementById('modal-body');
+
+                const BGdata = project.getAttribute('data-bg');
+
+                //if (BGdata) {
+                //    modalBody.style.backgroundImage = `url('${BGdata}')`;
+                //}
+
+
+                // Get the project ID
+                const projectId = project.getAttribute('data-project');
+
+                // Clear existing modal content
+                modalBody.innerHTML = '';
+
+                // Get the template for the clicked project
+                const template = document.querySelector(`#project-templates #project-${projectId}`);
+
+                // Clone and append the content from the template into the modal
+                if (template) {
+                    const clone = template.cloneNode(true);
+                    clone.style.display = 'block'; // Ensure the cloned content is visible
+                    modalBody.appendChild(clone);
+                }
+
+                // Show modal
+                modal.style.display = 'flex';
+            });
+        });
+
+
+        // Get the modal and close button
+        const modal = document.getElementById('myModal');
+        const closeModalBtn = document.querySelector('.close-modal');
+
+        // Function to open the modal
+        function openModal(videoSrc) {
+            modal.style.display = 'block';
+            const iframe = modal.querySelector('iframe');
+            iframe.src = videoSrc; // Set the iframe src to start the video
+        }
+
+        // Function to close the modal
+        closeModalBtn.addEventListener('click', function () {
+            modal.style.display = 'none';
+            const iframe = modal.querySelector('iframe');
+            iframe.src = ''; // Remove the src to stop the video
+        });
+
+        // Close modal when clicking outside of it
+        window.addEventListener('click', function (event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+                const iframe = modal.querySelector('iframe');
+                iframe.src = ''; // Remove the src to stop the video
+            }
+        });
+
+
+
+
+        //// Close modal
+        //document.querySelector('.close-modal').addEventListener('click', () => {
+        //    const modal = document.getElementById('myModal');
+        //    modal.style.display = 'none';
+        //});
+
+        //// Close modal when clicking outside the modal content
+        //document.getElementById('myModal').addEventListener('click', (event) => {
+        //    const modal = document.getElementById('myModal');
+        //    if (event.target === modal) {
+        //        modal.style.display = 'none'; // Close the modal
+        //    }
+        //});
+
+
+
+    </script>
+
+
+    <script>
+        var sidemenu = document.getElementById("sidemenu");
+
+        function OpenMenu() {
+            sidemenu.style.right = "0";
+        }
+
+        function CloseMenu() {
+            sidemenu.style.right = "-200px";
+        }
+
+
+    </script>
+
+</body>
+</html>

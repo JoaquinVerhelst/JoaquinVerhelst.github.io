@@ -1,0 +1,667 @@
+﻿*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background: #080808;
+    color: #fff;
+}
+
+#header{
+    width: 100%;
+    /*height: 100vh;*/
+    /*background-image: url(images/background.png);*/
+    background-size: cover;
+    background-position: center;
+}
+.container{
+    padding: 10px 10%;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo img {
+    padding-top: 10px;
+    max-width: 100%; /* Ensures the image won't be larger than its container */
+    height: auto; /* Maintains aspect ratio */
+    display: block; /* Removes default inline spacing */
+}
+
+.logo {
+    max-width: 100%; /* Ensures the <picture> element also respects screen width */
+    display: block; /* Makes sure the <picture> element acts as a block-level element */
+}
+
+nav .fa-solid {
+    display: block;
+    font-size: 25px;
+    right: 10px;
+}
+
+nav .fa-solid.fa-bars {
+    position: fixed; 
+    right: 10px; 
+    top: 10px; 
+    font-size: 25px;
+    cursor: pointer;
+}
+
+
+nav logo {
+    width: 200px auto;
+}
+
+
+nav ul {
+    background: #262626;
+    position: fixed;
+    top: 0;
+    right: -200px;
+    width: 200px;
+    height: 100vh;
+    padding-top: 50px;
+    z-index: 2;
+    transition: right 0.25s;
+}
+
+nav ul li {
+    display: block;
+    margin: 25px;
+}
+
+nav ul .fa-solid {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    cursor: pointer;
+}
+
+
+/*
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}*/
+
+nav ul li a{
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+
+nav ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+nav ul li a:hover::after{
+    width: 100%;
+}
+
+.header-text{
+    margin-top: 20%;
+    font-size: 30px;
+}
+
+.header-text h1{
+    font-size: 60px;
+    margin-top: 20px;
+}
+
+.header-text h1 span{
+    color: #ff004f;
+}
+
+
+/* ----------------------------ABIOUT------------------------------------*/
+
+#about{
+    padding: 80px 0;
+    color: #ababab
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+}
+
+.about-col-1{
+    flex-basis: 35%;
+}
+
+.about-col-1 img{
+    width: 80%;
+    border-radius: 15px;
+}
+
+.about-col-2{
+    flex-basis: 60%;
+}
+
+.sub-title{
+/*    padding-top: 50px;*/
+    padding-bottom: 30px;
+    font-size: 60px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.tab-titles{
+    display: flex;
+    margin: 20px 0 40px;
+}
+
+.tab-links{
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative  ;
+}
+
+.tab-links::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+}
+
+.tab-links.active-link::after{
+    width: 50%;
+}
+
+
+.tab-contents ul li{
+    list-style: none;
+    margin: 10px 0;
+}
+
+.tab-contents ul li span{
+    color: #b54769;
+    font-size: 14px;
+}
+
+.tab-contents {
+    display: none;
+}
+
+.tab-contents.active-tab{
+    display: block;
+}
+
+
+/* ----------------------------Portofolio------------------------------------*/
+
+
+#portofolio{
+    padding: 50px 0;
+}
+
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+    margin-top: 50px auto 0;
+    justify-items: center;
+}
+
+.project {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    width: 100%;
+    max-width: 700px;
+    aspect-ratio: 5 / 3;
+}
+
+.project img {
+    width: 100%;
+    height: 100%; 
+    object-fit: cover; 
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+
+.project:hover{
+    transform: scale(1.1);
+}
+
+
+.modal {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Dark background */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    background-size: contain;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat;
+}
+
+.hover-image {
+    display: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+.project:hover .hover-image {
+    display: block;
+
+}
+
+.project:hover .thumbnail {
+    display: none;
+}
+
+
+.modal-content {
+    background: black;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    position: relative;
+    margin: 0 auto; /* Center the modal */
+    /*box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);  Optional: add shadow */
+    background-size: contain;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat;
+    border: 2px solid white; /* Add a white border */
+}
+
+/* Add padding to text elements */
+.modal-content h2,
+.modal-content p {
+    padding: 10px 20px; /* Add padding around text elements */
+    margin: 0; /* Reset margin to avoid extra space */
+}
+
+
+/* Add padding for videos */
+.modal-content iframe {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 20px 0; /* Add margin above and below the video */
+    padding: 10px; /* Optional: internal padding for iframe */
+    border-radius: 10px; /* Optional: rounded edges for videos */
+}
+
+/* Close button styles */
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: white;
+}
+
+/*.modal-content img, .modal-content iframe {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+*/
+/* Add padding for images */
+.modal-content img {
+    width: 100%; /* Ensure images take full width */
+    height: auto; /* Maintain aspect ratio */
+    margin: 20px 0; /* Add margin above and below images */
+    border-radius: 10px; /* Optional: rounded corners for images */
+    padding: 10px; /* Internal padding for images (optional) */
+    object-fit: cover; /* Ensure the image covers the available space */
+}
+
+/*.work-list .work:nth-child(odd):last-child {
+    grid-column: span 2;*/ /* Span across both columns */
+    /*width: 100%;*/ /* Full width */
+/*}*/
+
+
+.video-container {
+    position: relative;
+    width: 100%; /* Use full width of the parent container */
+    padding-top: 56.25%;
+    overflow: hidden; /* Hide overflow */
+    bottom: 10px;
+}
+
+.video-container iframe {
+    position: absolute; /* Position the iframe absolutely within the container */
+    top: 10px; /* Align to the top */
+
+    left: 0; /* Align to the left */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+}
+
+.link-container {
+    display: flex; /* Optional: Center the icon */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+.link-container a {
+    font-size: 36px; /* Adjust size as needed */
+    color: white; /* Change color as desired */
+    transition: transform 0.2s; /* Optional: Add hover effect */
+}
+
+.link-container a:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+
+.gif-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.gif-container img {
+    width: calc(50% - 10px);
+    height: auto;
+    border-radius: 20px;
+    display: block;
+    transition: all 0.3s ease-in-out;
+}
+
+
+.gif-container img:nth-child(odd):last-child {
+    width: calc(60%); 
+    margin: 0 auto;
+    transform: scale(1.05);
+}
+
+
+.project-info {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centers the table horizontally */
+}
+
+.project-info table {
+    width: 80%; /* Adjust width as needed */
+    border-collapse: collapse;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace; /* Similar font */
+    margin: 0 auto;
+    background-color: black;
+}
+
+.project-info th, td {
+    padding: 10px 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+.project-info th {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.project-info td a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.project-info td a:hover {
+    text-decoration: underline;
+}
+
+/* Ensures cells without content stay empty */
+.project-info td[colspan="3"] {
+    border-bottom: none;
+}
+
+/* -------------------TAGS ---------------------------------------------*/
+
+.tags {
+
+    position: absolute;
+    top: 80px;
+    left: auto;
+    right: -30px;
+    bottom: auto;
+
+    transform: translate(-50%, 50%); /* Center the tags initially */
+    display: flex;
+    flex-direction: column; /* Tags will be displayed vertically */
+    gap: 10px; /* Space between tags */
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth appearance */
+
+
+}
+
+.tag {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    color: #fff; /* White text */
+    padding: 5px 10px; /* Padding for the tags */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 14px; /* Font size */
+    white-space: nowrap; /* Prevent text from wrapping */
+    transition: transform 0.3s ease; /* Smooth movement of tags */
+}
+
+
+/* Hover effect */
+/*.project:hover .tags {
+    opacity: 1;
+    transform: translate(-50%, -40%);*/ /* Adjust as needed */
+/*}
+
+.project:hover .tag {
+    transform: translateY(-5px);*/ /* Apply hover animation to all tags */
+/*}*/
+
+
+
+/* Hover effect */
+.project:hover .tags {
+    opacity: 1;
+    transform: translate(-50%, -30%); 
+}
+
+.project:hover .tag:nth-child(1) {
+    transform: translateY(-10px);  
+}
+
+.project:hover .tag:nth-child(2) {
+    transform: translateY(-20px);  
+}
+
+.project:hover .tag:nth-child(3) {
+    transform: translateY(-30px);  
+}
+.project:hover .tag:nth-child(4) {
+    transform: translateY(-40px);
+}
+.project:hover .tag:nth-child(5) {
+    transform: translateY(-50px);
+}
+.project:hover .tag:nth-child(6) {
+    transform: translateY(-60px);
+}
+
+
+/*----------------------------Contact -----------------------------------*/
+
+
+
+.btn{
+    display: block;
+    margin: 50px auto;
+    width: fit-content;
+    border: 1px solid darkred;
+    padding: 14px 50px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: white;
+    transition: background 0.5s;
+}
+
+.btn:hover{
+    background: darkred;
+
+}
+
+.btn.btn2{
+    display: inline-block;
+    background: black;
+}
+
+.btn.btn2:hover {
+    background: darkred;
+}
+
+
+
+.contact-left {
+    flex-basis: 35%;
+    padding-top: 50px;
+}
+.contact-right {
+    flex-basis: 60%;
+    padding-top: 50px;
+}
+
+.contact-left p{
+    margin-top: 30px;
+}
+.contact-left p i{
+    color: white;
+    margin-right: 15px;
+    font-size: 25px;
+}
+
+.social-icons{
+    margin-top: 30px;
+}
+
+.social-icons a {
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: white;
+    display: inline-block;
+    transition: transform 0.3s
+}
+
+.social-icons a:hover{
+
+    color: darkred;
+    transform: translateY(-5px);
+
+}
+
+.contact-right form{
+    width:100%;
+}
+
+form input, form textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin: 15px 0;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+
+}
+
+form .btn2{
+    padding: 14px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+
+
+/* ------------------------css for small screen ----------------------------*/
+
+
+
+
+@media only screen and (max-width: 700px){
+
+    /*background-image: url(images/background.png);*/ /* the smaller version of the background if ur using one, so you need two versions of it*/
+
+    .header-text{
+        margin-top: 100%;
+        font-size: 16px;
+    }
+    .header-text h1{
+        font-size: 30px;
+    }
+
+
+    .about-col-1, about-col-2{
+        flex-basis: 100%;
+    }
+
+    .about-col-1{
+        margin-bottom: 30px;
+    }
+
+
+
+    .project-list {
+
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+
+
+    .contact-left, .contact-right {
+        flex-basis: 100%;
+    }
+
+    .gif-container img {
+        width: 100%; /* Stack the GIFs vertically on small screens */
+    }
+}
