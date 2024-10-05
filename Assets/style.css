@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     background: #080808;
     color: #fff;
@@ -28,16 +32,69 @@ nav{
     flex-wrap: wrap;
 }
 
-.logo{
-    width: 500px;
-    
+.logo img {
+    padding-top: 10px;
+    max-width: 100%; /* Ensures the image won't be larger than its container */
+    height: auto; /* Maintains aspect ratio */
+    display: block; /* Removes default inline spacing */
 }
 
+.logo {
+    max-width: 100%; /* Ensures the <picture> element also respects screen width */
+    display: block; /* Makes sure the <picture> element acts as a block-level element */
+}
+
+nav .fa-solid {
+    display: block;
+    font-size: 25px;
+    right: 10px;
+}
+
+nav .fa-solid.fa-bars {
+    position: fixed; 
+    right: 10px; 
+    top: 10px; 
+    font-size: 25px;
+    cursor: pointer;
+}
+
+
+nav logo {
+    width: 200px auto;
+}
+
+
+nav ul {
+    background: #262626;
+    position: fixed;
+    top: 0;
+    right: -200px;
+    width: 200px;
+    height: 100vh;
+    padding-top: 50px;
+    z-index: 2;
+    transition: right 0.25s;
+}
+
+nav ul li {
+    display: block;
+    margin: 25px;
+}
+
+nav ul .fa-solid {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    cursor: pointer;
+}
+
+
+/*
 nav ul li{
     display: inline-block;
     list-style: none;
     margin: 10px 20px;
-}
+}*/
 
 nav ul li a{
     color: #ffffff;
@@ -95,7 +152,7 @@ nav ul li a:hover::after{
 }
 
 .about-col-1 img{
-    width: 100%;
+    width: 80%;
     border-radius: 15px;
 }
 
@@ -104,6 +161,8 @@ nav ul li a:hover::after{
 }
 
 .sub-title{
+/*    padding-top: 50px;*/
+    padding-bottom: 30px;
     font-size: 60px;
     font-weight: 600;
     color: #ffffff;
@@ -401,4 +460,143 @@ nav ul li a:hover::after{
 }
 .project:hover .tag:nth-child(6) {
     transform: translateY(-60px);
+}
+
+
+/*----------------------------Contact -----------------------------------*/
+
+
+
+.btn{
+    display: block;
+    margin: 50px auto;
+    width: fit-content;
+    border: 1px solid darkred;
+    padding: 14px 50px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: white;
+    transition: background 0.5s;
+}
+
+.btn:hover{
+    background: darkred;
+
+}
+
+.btn.btn2{
+    display: inline-block;
+    background: black;
+}
+
+.btn.btn2:hover {
+    background: darkred;
+}
+
+
+
+.contact-left {
+    flex-basis: 35%;
+    padding-top: 50px;
+}
+.contact-right {
+    flex-basis: 60%;
+    padding-top: 50px;
+}
+
+.contact-left p{
+    margin-top: 30px;
+}
+.contact-left p i{
+    color: white;
+    margin-right: 15px;
+    font-size: 25px;
+}
+
+.social-icons{
+    margin-top: 30px;
+}
+
+.social-icons a {
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: white;
+    display: inline-block;
+    transition: transform 0.3s
+}
+
+.social-icons a:hover{
+
+    color: darkred;
+    transform: translateY(-5px);
+
+}
+
+.contact-right form{
+    width:100%;
+}
+
+form input, form textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin: 15px 0;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+
+}
+
+form .btn2{
+    padding: 14px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+
+
+/* ------------------------css for small screen ----------------------------*/
+
+
+
+
+@media only screen and (max-width: 700px){
+
+    /*background-image: url(images/background.png);*/ /* the smaller version of the background if ur using one, so you need two versions of it*/
+
+    .header-text{
+        margin-top: 100%;
+        font-size: 16px;
+    }
+    .header-text h1{
+        font-size: 30px;
+    }
+
+
+    .about-col-1, about-col-2{
+        flex-basis: 100%;
+    }
+
+    .about-col-1{
+        margin-bottom: 30px;
+    }
+
+
+
+    .project-list {
+
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+
+
+    .contact-left, .contact-right {
+        flex-basis: 100%;
+    }
+
+
 }

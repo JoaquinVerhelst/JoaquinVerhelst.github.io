@@ -14,14 +14,20 @@
     <div id="header">
         <div class="container">
             <nav>
-                <img src="Images/logo.png" class="logo">
+                <picture class="logo">
+                    <source srcset="Images/logo-small.png" media="(max-width: 800px)">
+                    <source srcset="Images/logo.png" media="(min-width: 801px)">
+                    <img src="Images/logo.png" alt="Logo">
+                </picture>
 
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Projects</a></li>
-                    <li><a href="#">Contact</a></li>
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portofolio">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="CloseMenu()"></i>
                 </ul>
+                <i class="fa-solid fa-bars" onclick="OpenMenu()"></i>
             </nav>
             <p>Game Developer</p>
         </div>
@@ -34,7 +40,7 @@
                     <img src="Images/user.jpg">
                 </div>
                 <div class="about-col-2">
-                    <h1 class="sub-title">About Me </h1>
+                    <h1 class="sub-title">Welcome!</h1>
                     <p>
                         Wealth. Fame. Power. The man who had everything in this world... The Pirate King, Gold Roger.
                         The great treasure he left behind, One Piece has opened the curtain on a grand era!
@@ -72,7 +78,7 @@
     </div>
 
 
-    <!------------------------------------Portofolio------------------------------->
+    <!--------------------------------------------------------------------------Portofolio---------------------------------------------------------------------------------------------->
     <!--                        -->
     <div id="portofolio">
         <div class="container">
@@ -124,19 +130,7 @@
 
 
                 </div>
-                <!--Jotar 2D Engine-->
-                <div class="project" data-project="4">
-                    <img src="images/JotarEngine.png" class="thumbnail" />
-                    <img src="images/JotarEngine.png" class="hover-image" style="display: none;" />
 
-
-                    <div class="tags">
-                        <span class="tag" data-color="#">Solo</span>
-                        <span class="tag" data-color="#">2d Engine</span>
-                        <span class="tag" data-color="#e74c3c">C++</span>
-                        <span class="tag" data-color="#2ecc71">On Hold</span>
-                    </div>
-                </div>
                 <!--Bomberman-->
                 <div class="project" data-project="5">
                     <img src="images/Bomberman.png" class="thumbnail" />
@@ -150,10 +144,14 @@
                         <span class="tag" data-color="#2ecc71">Released</span>
                     </div>
                 </div>
+
+
+
+
+
             </div>
         </div>
     </div>
-
 
     <!-- Modal structure -->
     <div id="myModal" class="modal">
@@ -167,23 +165,6 @@
         </div>
     </div>
 
-
-
-
-    <!--<div id="portofolio">
-        <div class="container">
-            <h1 class="sub-title">Additional Projects</h1>
-            <div class="project-list">
-                <div class="project">
-                    <img src="images/DualRasterizer.png" />
-
-                </div>
-                <div class="project">
-                    <img src="images/VulkanProject.png" />
-                </div>
-            </div>
-        </div>
-    </div>-->
 
 
 
@@ -220,7 +201,7 @@
         <div id="project-3">
             <h2>Reach The Peak</h2>
             <p>Reach The Peak (working title) is a multiplayer coop game where you need to survive in an endless maze of Dungeons. Collect skill books to gain Attacks, Defencive and utility skills to make you life easier. You need to become stronger to get further and reach the peak of your Skills to Escape this Abyss of Dungeons! </p>
-  
+
             <div class="link-container">
                 <a href="https://github.com/JoaquinVerhelst/ReachThePeak"><i class="fa-brands fa-github"></i></a>
                 <a href="https://ethannelis.itch.io/flora-frenzy"><i class="fa-brands fa-itch-io"></i></a>
@@ -229,8 +210,72 @@
 
         </div>
 
+        <!--Bomberman-->
+        <div id="project-5">
+            <h2>Bomberman</h2>
+            <p>This is the description for Bomberman.</p>
+            <div>
+                <h3>Technical Details</h3>
+                <p>Some technical details about Project 5.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!----------------------------------------------------------Other Projects ---------------------------------------------------------------------------->
+
+
+
+
+    <div id="otherProjects">
+        <div class="container">
+            <h1 class="sub-title">Other Projects</h1>
+
+            <div class="project-list">
+
+                <!--Jotar 2D Engine-->
+                <div class="project" data-project="o-1">
+                    <img src="images/JotarEngine.png" class="thumbnail" />
+                    <img src="images/JotarEngine.png" class="hover-image" style="display: none;" />
+
+
+                    <div class="tags">
+                        <span class="tag" data-color="#">Solo</span>
+                        <span class="tag" data-color="#">2d Engine</span>
+                        <span class="tag" data-color="#e74c3c">C++</span>
+                        <span class="tag" data-color="#2ecc71">On Hold</span>
+                    </div>
+                </div>
+
+
+                <!--Dual Rastrizer-->
+                <div class="project" data-bg="images/BinaryBanditsBG.png" data-project="o-2">
+                    <img src="images/BinaryBandits.png" class="thumbnail" />
+                    <img src="images/BinaryBandits.png" class="hover-image" style="display: none;" />
+
+                </div>
+
+
+                <!--Vulkan project -->
+                <div class="project" data-bg="images/BinaryBanditsBG.png" data-project="o-3">
+                    <img src="images/BinaryBandits.png" class="thumbnail" />
+                    <img src="images/BinaryBandits.png" class="hover-image" style="display: none;" />
+
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div id="project-templates" style="display: none;">
+
         <!--Jotar 2D Engine -->
-        <div id="project-4">
+        <div id="project-o-1">
             <h2>Jotar 2D Engine</h2>
             <p>This is the description for Jotar 2D Engine.</p>
             <div>
@@ -243,17 +288,82 @@
             </div>
         </div>
 
-        <!--Bomberman-->
-        <div id="project-5">
-            <h2>Bomberman</h2>
-            <p>This is the description for Bomberman.</p>
-            <div>
-                <h3>Technical Details</h3>
-                <p>Some technical details about Project 5.</p>
+        <div id="project-o-2">
+            <h2>Dual Rastrizer</h2>
+            <p>Ever imagined yourself and your best mate as a killer spy and cunning hacker duo? If that's you, then get ready to boogie in Binary Bandits, a local co-op puzzle game that takes you straight back to the late 70s.</p>
+            <h3>About the Game</h3>
+            <p>Binary Bandits is a local co-op puzzle game, where one player has to move the spy, while your partner can hack the objects around the spy to help you get further to complete your objective. </p>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/OkSxKvIIl4w" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="link-container">
+                <a href="https://rasahalune.itch.io/binarybandits"><i class="fa-brands fa-itch-io"></i></a>
+            </div>
+        </div>
+
+        <div id="project-o-3">
+            <h2>Vulkan Project</h2>
+            <p>Ever imagined yourself and your best mate as a killer spy and cunning hacker duo? If that's you, then get ready to boogie in Binary Bandits, a local co-op puzzle game that takes you straight back to the late 70s.</p>
+            <h3>About the Game</h3>
+            <p>Binary Bandits is a local co-op puzzle game, where one player has to move the spy, while your partner can hack the objects around the spy to help you get further to complete your objective. </p>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/OkSxKvIIl4w" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="link-container">
+                <a href="https://rasahalune.itch.io/binarybandits"><i class="fa-brands fa-itch-io"></i></a>
+            </div>
+        </div>
+
+
+    </div>
+
+    <!---------------------------------------------------------------------CONTACT ----------------------------------------------------------------------------->
+
+
+
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fa-solid fa-envelope"></i> Joaquin.verhelst@hotmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i> +32 468 21 38 66</p>
+                    <div class="social-icons">
+                        <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                        <a href=""><i class="fa-brands fa-itch-io"></i></a>
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                    <a href="Images/cv_Joaquin_Verhelst.docx" download class="btn btn2">DownLoad CV</a>
+                </div>
+                <div class="contact-right">
+                    <form method="post" action="https://api.web3forms.com/submit">
+
+                        <input type="hidden" name="access_key" value="198262aa-55ad-4799-a81c-2fb4b4879e36">
+
+                        <input type="text" name="Name" placeholder="Your Name" required />
+                        <input type="email" name="Email" placeholder="Your Email" required />
+                        <textarea name="message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="Submit" class="btn btn2">Submit</button>
+
+                    </form>
+
+                </div>
             </div>
         </div>
 
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -312,7 +422,7 @@
                 //if (BGdata) {
                 //    modalBody.style.backgroundImage = `url('${BGdata}')`;
                 //}
- 
+
 
                 // Get the project ID
                 const projectId = project.getAttribute('data-project');
@@ -384,6 +494,20 @@
 
     </script>
 
+
+    <script>
+        var sidemenu = document.getElementById("sidemenu");
+
+        function OpenMenu() {
+            sidemenu.style.right = "0";
+        }
+
+        function CloseMenu() {
+            sidemenu.style.right = "-200px";
+        }
+
+
+    </script>
 
 </body>
 </html>
