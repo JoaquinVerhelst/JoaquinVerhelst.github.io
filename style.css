@@ -133,6 +133,24 @@ nav ul li a:hover::after{
 }
 
 
+.empty-divider {
+    border: none;
+    height: 1px;
+    background-color: none;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+
+.small-divider {
+
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+
+
+
 /* ----------------------------ABIOUT------------------------------------*/
 
 #about{
@@ -535,21 +553,44 @@ nav ul li a:hover::after{
 
 #skills {
     padding: 20px;
-    background: #080808; /* You can change this to match your page */
+    background: #080808;
 }
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+    grid-template-columns: 1fr 1fr; /* Two columns */
     grid-gap: 20px;
+    align-items: stretch; /* Make sure both columns stretch to equal height */
+}
+
+.software-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.small-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: space-between; /* Distribute space evenly */
+}
+
+.small-card {
+    background: #262626;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    font-family: 'Roboto', sans-serif;
+    flex-grow: 1; /* Allow cards to grow to fill available space */
 }
 
 .skill-card {
-    background: #262626; /* Slightly transparent white */
+    background: #262626;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
-    font-family: 'Roboto', sans-serif; /* Ensure a clean modern font */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    font-family: 'Roboto', sans-serif;
 }
 
 .skill-card h3 {
@@ -569,17 +610,11 @@ nav ul li a:hover::after{
     font-size: 0.95em;
 }
 
-.skill-card ul li strong {
-    font-weight: bold;
-}
-
-
-
 .divider {
-    border: none; /* Remove default border */
-    height: 1px; /* Set the height of the line */
-    background-color: white; /* Color of the line */
-    margin: 10px 0; /* Space above and below the line */
+    border: none;
+    height: 1px;
+    background-color: white;
+    margin-top: 1px 0;
     margin-bottom: 20px;
 }
 
@@ -710,10 +745,12 @@ form .btn2{
 
 
     .skills-grid {
-        grid-template-columns: 1fr; /* Make it a single column on smaller screens */
+        grid-template-columns: 1fr; /* Stack all cards in a single column on smaller screens */
     }
-    
 
+    .small-cards {
+        flex-direction: column;
+    }
 
 
     .project-list {

@@ -43,7 +43,8 @@
                     <h1 class="sub-title">Welcome!</h1>
                     <p>
                         Hey there! I’m a Game Developer with a passion for making games. While my focus is on gameplay programming, I also love getting involved in game design, finding the balance between fun mechanics and engaging player experiences.
-
+                    </p>
+                    <p>
                         I enjoy the process of bringing ideas to life—whether it’s fine-tuning controls, building systems that just click, or designing mechanics that keep players hooked. I’m always looking to improve my skills, take on new challenges, and create games that resonate with players.
 
                     </p>
@@ -76,7 +77,7 @@
 
 
 
-
+    <hr class="empty-divider">
 
 
 
@@ -85,6 +86,7 @@
     <div id="portofolio">
         <div class="container">
             <h1 class="sub-title">Game Projects</h1>
+            <hr class="divider">
             <div class="project-list">
                 <!--Binary Bandits-->
                 <div class="project" data-bg="Images/BinaryBanditsBG.png" data-project="1">
@@ -93,8 +95,7 @@
 
 
                     <div class="tags">
-                        <span class="tag" data-color="#">Group Project</span>
-                        <span class="tag" data-color="#">Game</span>
+                        <span class="tag" data-color="#">Group</span>
                         <span class="tag" data-color="#e74c3c">C++</span>
                         <span class="tag" data-color="#e74c3c">Unreal Engine 5</span>
                         <span class="tag" data-color="#2ecc71">Released</span>
@@ -108,7 +109,7 @@
 
 
                     <div class="tags">
-                        <span class="tag" data-color="#">Group Project</span>
+                        <span class="tag" data-color="#">Group</span>
                         <span class="tag" data-color="#">Game</span>
                         <span class="tag" data-color="#e74c3c">C++</span>
                         <span class="tag" data-color="#e74c3c">Unreal Engine 5</span>
@@ -176,15 +177,25 @@
         <!--Binary Bandits-->
         <div id="project-1">
             <h2>Binary Bandits</h2>
-            <p>Ever imagined yourself and your best mate as a killer spy and cunning hacker duo? If that's you, then get ready to boogie in Binary Bandits, a local co-op puzzle game that takes you straight back to the late 70s.</p>
-            <h3>About the Game</h3>
-            <p>Binary Bandits is a local co-op puzzle game, where one player has to move the spy, while your partner can hack the objects around the spy to help you get further to complete your objective. </p>
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/OkSxKvIIl4w" frameborder="0" allowfullscreen></iframe>
-            </div>
+            <p>
+                Infiltrate the evil Robot Corp as a stealthy Spy with one mission: destroy their supercomputer hidden in the back of the facility. Along the way, you'll face laser grids, security cameras, and alert office workers. Thankfully, the Hacker is there to help, hacking into systems to disable cameras, open doors, and create distractions so the Spy can move forward.
+            </p>
+            <p>
+                If the Spy sets off alarms, the Hacker has a limited chance to override them. But be careful—three failed attempts, and the alarm is fully triggered. If caught, the Spy will be thrown out by the robots, forcing them to start again.
+            </p>
+
             <div class="link-container">
                 <a href="https://rasahalune.itch.io/binarybandits"><i class="fa-brands fa-itch-io"></i></a>
             </div>
+
+            <hr class="empty-divider small-divider">
+
+            <h3>What I Did</h3>
+            <p>This is my first Unreal Engine project, where I fully embraced the C++ side of UE and kept the usage of blueprints to the minimum. Throughout the development, I gained a deeper understanding of how Unreal Engine operates. I built the Spy player controller from scratch, programmed everything related to the AI for the enemies, and created the hackable objects, including doors, cameras, and lasers. </p>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/OkSxKvIIl4w" frameborder="0" allowfullscreen></iframe>
+            </div>
+
 
             <div class="project-info">
                 <table>
@@ -204,7 +215,8 @@
                             <td><a href="#">Lev Dukhovnyi</a></td>
                         </tr>
                         <tr>
-                            <td colspan="3"></td> <!-- Empty cells to span the previous columns -->
+                            <td colspan="2"></td> <!-- Empty cells to span the previous columns -->
+                            <td><a href="#">David Devos</a></td>
                             <td><a href="#">Sarah-Luna Van Steen</a></td>
                         </tr>
                         <tr>
@@ -225,12 +237,23 @@
         <div id="project-2">
             <h2>Flora Frenzy</h2>
             <p>Flora Frenzy is an action-packed shooter adventure game in which you have to escape from a hostile alien planet. Fight your way through waves of plant-based enemies, use different combat abilities and smoothly manoever your way across the levels. It's time to kick some plant butt!</p>
-            <div class="video-container">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/o7ros9kLGYE" frameborder="0" allowfullscreen></iframe>
-            </div>
+
             <div class="link-container">
                 <a href="https://ethannelis.itch.io/flora-frenzy"><i class="fa-brands fa-itch-io"></i></a>
             </div>
+
+            <hr class="empty-divider small-divider">
+
+
+            <h3>What I Did</h3>
+            <p>When we first started developing this game, we were full of excitement and ambition, eager to pack in as many mechanics as possible. However, this project taught me a valuable lesson: sometimes you need to adapt, scrap, or modify ideas to stay on schedule or improve the overall gameplay experience.</p>
+
+            <p>In this game, I took on the task of developing the entire player controller, with a significant focus on making the slide mechanics feel smoother and more responsive. I also worked on the enemy spawning system, wave and arena systems, and contributed a little bit to enemy behavior, like handling stuns, health, and death mechanics. Additionally, I was involved in implementing visual effects, player guidance UI, and various other small but important details that helped enhance the final product.</p>
+
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/o7ros9kLGYE" frameborder="0" allowfullscreen></iframe>
+            </div>
+
 
             <div class="project-info">
                 <table>
@@ -272,7 +295,13 @@
         <!--Reach The Peak-->
         <div id="project-3">
             <h2>Reach The Peak</h2>
-            <p>Reach The Peak (working title) is a multiplayer coop game where you need to survive in an endless maze of Dungeons. Collect skill books to gain Attacks, Defencive and utility skills to make you life easier. You need to become stronger to get further and reach the peak of your Skills to Escape this Abyss of Dungeons! </p>
+            <p>Reach The Peak is a (singleplayer and/or) multiplayer Co-op game where players must survive in an endless maze of dungeons. Collect skill books that grant you offensive, defensive, and utility skills to enhance your chances of survival. As you progress, you’ll need to grow stronger to venture deeper into the abyss and ultimately reach the peak of your abilities to escape the labyrinth of dungeons! </p>
+
+            <hr class="empty-divider small-divider">
+
+            <h3>About the game</h3>
+
+            <p></p>
 
             <div class="gif-container">
                 <img src="Images/ReachThePeak/FightEnemy.gif" />
@@ -327,17 +356,18 @@
 
 
 
-
+    <hr class="empty-divider">
 
     <!----------------------------------------------------------Skills ---------------------------------------------------------------------------->
 
 
-    <div id="portofolio">
+    <div id="skills">
         <div class="container">
             <h1 class="sub-title">Skills</h1>
+            <hr class="divider">
 
             <div class="skills-grid">
-                <div class="skill-card">
+                <div class="skill-card big-card">
                     <h3>SOFTWARE</h3>
                     <hr class="divider">
 
@@ -365,25 +395,30 @@
                         <li>Dear ImGui</li>
                     </ul>
                 </div>
-                <div class="skill-card">
-                    <h3>PROGRAMMING LANGUAGES</h3>
-                    <hr class="divider">
-                    <ul>
-                        <li>C++</li>
-                        <li>C#</li>
-                        <li>XAML</li>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>Lua</li>
-                    </ul>
-                </div>
-                <div class="skill-card">
-                    <h3>HUMAN LANGUAGES</h3>
-                    <hr class="divider">
-                    <ul>
-                        <li>Dutch - Native</li>
-                        <li>English - Fluent</li>
-                    </ul>
+                <div class="small-cards">
+                    <div class="skill-card small-card">
+                        <h3>PROGRAMMING LANGUAGES</h3>
+                        <hr class="divider">
+                        <ul>
+                            <li>C++</li>
+                            <li>C#</li>
+                            <li>XAML</li>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>Lua</li>
+
+                        </ul>
+                    </div>
+
+                    <div class="skill-card small-card">
+                        <h3>HUMAN LANGUAGES</h3>
+                        <hr class="divider">
+                        <ul>
+                            <li>Dutch - Native</li>
+                            <li>English - Fluent</li>
+                            <li>Spanish - Moderate</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
@@ -398,6 +433,7 @@
 
 
 
+    <hr class="empty-divider">
 
     <!----------------------------------------------------------Other Projects ---------------------------------------------------------------------------->
 
@@ -407,6 +443,8 @@
     <div id="otherProjects">
         <div class="container">
             <h1 class="sub-title">Other Projects</h1>
+            <hr class="divider">
+
 
             <div class="project-list">
 
@@ -494,12 +532,19 @@
 
     </div>
 
+
+
+    <hr class="empty-divider">
+
+
     <!---------------------------------------------------------------------CONTACT ----------------------------------------------------------------------------->
 
 
 
     <div id="contact">
         <div class="container">
+            <hr class="divider">
+
             <div class="row">
                 <div class="contact-left">
                     <h1 class="sub-title">Contact Me</h1>
