@@ -175,13 +175,14 @@
             </div>
 
 
+
             <div class="project-info">
-                <table>
+                <table class="original-table">
                     <thead>
                         <tr>
                             <th>Engine</th>
                             <th>Language</th>
-                            <th>Programmer</th>
+                            <th>Programmers</th>
                             <th>Artists</th>
                         </tr>
                     </thead>
@@ -193,7 +194,7 @@
                             <td><a href="#">Lev Dukhovnyi</a></td>
                         </tr>
                         <tr>
-                            <td colspan="2"></td> <!-- Empty cells to span the previous columns -->
+                            <td colspan="2"></td>
                             <td><a href="#">David Devos</a></td>
                             <td><a href="#">Sarah-Luna Van Steen</a></td>
                         </tr>
@@ -205,9 +206,47 @@
                             <td colspan="3"></td>
                             <td><a href="#">Ebbo Gyssels</a></td>
                         </tr>
+
                     </tbody>
                 </table>
+
+                <table class="responsive-table">
+                    <tbody>
+                        <tr>
+                            <td>Engine:</td>
+                            <td>Unreal Engine 5</td>
+                        </tr>
+                        <tr>
+                            <td>Language:</td>
+                            <td>C++</td>
+                        </tr>
+                        <tr>
+                            <td>Programmers:</td>
+                            <td>
+                                <a href="#">Joaquin Verhelst</a>,
+                                <a href="#">David Devos</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Artists:</td>
+                            <td>
+                                <a href="#">Lev Dukhovnyi</a>,
+                                <a href="#">Sarah-Luna Van Steen</a>,
+                                <a href="#">Ruben Verhelst</a>,
+                                <a href="#">Ebbo Gyssels</a>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
             </div>
+
+
+
+
+
+
+
 
         </div>
 
@@ -233,13 +272,16 @@
             </div>
 
 
+
+
+
             <div class="project-info">
-                <table>
+                <table class="original-table">
                     <thead>
                         <tr>
                             <th>Engine</th>
                             <th>Language</th>
-                            <th>Programmer</th>
+                            <th>Programmers</th>
                             <th>Artists</th>
                             <th>Sound Designer</th>
                             <th>Game Designer</th>
@@ -266,6 +308,47 @@
                             <td colspan="2"></td>
                         </tr>
                     </tbody>
+                </table>
+
+                <table class="responsive-table">
+                    <tbody>
+                        <tr>
+                            <td>Engine:</td>
+                            <td>Unreal Engine 5</td>
+                        </tr>
+                        <tr>
+                            <td>Language:</td>
+                            <td>C++</td>
+                        </tr>
+                        <tr>
+                            <td>Programmers:</td>
+                            <td>
+                                <a href="#">Joaquin Verhelst</a>,
+                                <a href="#">Sacha Gonzalez De Muer</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Artists:</td>
+                            <td>
+                                <a href="#">Anouk van Uffelen</a>,
+                                <a href="#">Joan Tieu</a>,
+                                <a href="#">Shawn Perlado Calapaca</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Sound Designer:</td>
+                            <td>
+                                <a href="#">Jake Wheaton</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Game Designer:</td>
+                            <td>
+                                <a href="#">Ethan Nelis</a>
+                            </td>
+                        </tr>
+                    </tbody>
+
                 </table>
             </div>
 
@@ -295,14 +378,14 @@
             </div>
 
 
+
             <div class="project-info">
-                <table>
+                <table class="original-table">
                     <thead>
                         <tr>
                             <th>Engine</th>
                             <th>Language</th>
                             <th>Programmer</th>
-                            <th>Artists</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -310,14 +393,31 @@
                             <td>Unity</td>
                             <td>C#</td>
                             <td>Joaquin Verhelst</td>
-                            <td><a href="#"></a></td>
-                        </tr>
-                        <tr>
-                            <td colspan="3"></td> <!-- Empty cells to span the previous columns -->
                         </tr>
                     </tbody>
                 </table>
+
+                <table class="responsive-table">
+                    <tbody>
+                        <tr>
+                            <td>Engine:</td>
+                            <td>Unity</td>
+                        </tr>
+                        <tr>
+                            <td>Language:</td>
+                            <td>C#</td>
+                        </tr>
+                        <tr>
+                            <td>Programmers:</td>
+                            <td>
+                                <a href="#">Joaquin Verhelst</a>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
             </div>
+
 
         </div>
 
@@ -661,7 +761,8 @@
 
         // Function to open the modal
         function openModal(videoSrc) {
-            modal.style.display = 'block';
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
             const iframe = modal.querySelector('iframe');
             iframe.src = videoSrc; // Set the iframe src to start the video
         }
@@ -669,6 +770,7 @@
         // Function to close the modal
         closeModalBtn.addEventListener('click', function () {
             modal.style.display = 'none';
+            document.body.style.overflow = '';
             const iframe = modal.querySelector('iframe');
             iframe.src = ''; // Remove the src to stop the video
         });

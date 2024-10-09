@@ -312,6 +312,9 @@ nav ul li a:hover::after{
     z-index: 1000;
     overflow-y: auto; /* Enable scrolling if content is too tall */
     padding: 20px; /* Add padding for better spacing on small screens */
+
+    scrollbar-width: thin; /* Makes the scrollbar thin */
+    scrollbar-color: darkred rgba(255, 255, 255, 0.1);
 }
 
 .hover-image {
@@ -339,13 +342,14 @@ nav ul li a:hover::after{
     max-width: 800px;
     text-align: center;
     position: relative;
-    margin: auto; /* Center the modal */
+    margin: 100px auto; /* Center the modal */
     /*box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);  Optional: add shadow */
     background-size: contain;
     background-position: center; /* Center the image */
     background-repeat: no-repeat;
     border: 2px solid white; /* Add a white border */
     overflow: auto;
+    max-height: 80vh;
 }
 
 /* Add padding to text elements */
@@ -355,6 +359,25 @@ nav ul li a:hover::after{
     margin: 0; /* Reset margin to avoid extra space */
 }
 
+
+/* Scrollbar styling for WebKit browsers (Chrome, Safari) */
+.modal::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+}
+
+.modal::-webkit-scrollbar-thumb {
+    background-color: #ff004f; /* Color of the scrollbar thumb */
+    border-radius: 10px; /* Rounded edges */
+}
+
+.modal::-webkit-scrollbar-thumb:hover {
+    background-color: #e6003a; /* Color on hover */
+}
+
+.modal::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1); /* Background color of the track */
+    border-radius: 10px; /* Rounded edges for the track */
+}
 
 /* Add padding for videos */
 .modal-content iframe {
@@ -461,7 +484,15 @@ nav ul li a:hover::after{
     transform: scale(1.05);
 }
 
-.project-info table {
+
+.project-info {
+    width: 100%; /* Ensure the project info container takes full width */
+    display: flex; /* Enable flexbox for centering */
+    justify-content: center; /* Center content horizontally */
+}
+
+
+.responsive-table table {
     width: 100%; /* Make the table full width */
     border-collapse: collapse; /* Merge borders for a clean look */
     font-family: 'Roboto', sans-serif; /* Modern, clean font */
@@ -469,19 +500,8 @@ nav ul li a:hover::after{
     background-color: #121212; /* Dark background for the table */
 }
 
-/* Header Styling */
-.project-info thead th {
-    background-color: #ff004f; /* Highlight header with accent color */
-    color: #ffffff;
-    padding: 15px; /* Add padding for better spacing */
-    font-size: 16px;
-    font-weight: 700; /* Make the headers bold */
-    text-align: left; /* Align text to the left */
-    border-bottom: 2px solid #444444; /* Add a border below headers */
-}
-
 /* Body Styling */
-.project-info tbody td {
+.responsive-table tbody td {
     padding: 12px 15px; /* Add padding for better spacing */
     font-size: 14px;
     border-bottom: 1px solid #444444; /* Border between rows */
@@ -489,26 +509,92 @@ nav ul li a:hover::after{
     background-color: #1a1a1a; /* Slightly lighter background for rows */
 }
 
-/* Link Styling */
-.project-info tbody td a {
+    /* Header Styling (not used in this structure) */
+    /* .project-info thead th { 
+    background-color: #ff004f; 
+    color: #ffffff; 
+    padding: 15px; 
+    font-size: 16px; 
+    font-weight: 700; 
+    text-align: left; 
+    border-bottom: 2px solid #444444; 
+} */
+
+    /* Link Styling */
+.responsive-table tbody td a {
     color: #ff004f; /* Match link color with the header accent */
     text-decoration: none;
     font-weight: 500; /* Make the links stand out slightly */
 }
 
-.project-info tbody td a:hover {
-    text-decoration: underline; /* Underline on hover for visibility */
-}
+    .responsive-table tbody td a:hover {
+        text-decoration: underline; /* Underline on hover for visibility */
+    }
 
 /* Handle empty cells */
-.project-info tbody td[colspan] {
+.responsive-table tbody td[colspan] {
     background-color: #121212; /* Match the background to make it seamless */
     border: none; /* Remove borders for empty cells */
 }
 
 /* Alternate Row Colors */
-.project-info tbody tr:nth-child(odd) td {
+.responsive-table tbody tr:nth-child(odd) td {
     background-color: #141414; /* Darker color for alternate rows */
+}
+
+.project-info table{
+    position: center;
+}
+
+.original-table table {
+    width: 100%; 
+    border-collapse: collapse; 
+    font-family: 'Roboto', sans-serif; 
+    color: #ffffff; 
+    background-color: #121212; 
+}
+
+/* Header Styling */
+.original-table thead th {
+    background-color: #ff004f;
+    color: #ffffff;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: left;
+    border-bottom: 2px solid #444444;
+}
+
+/* Body Styling */
+.original-table tbody td {
+    padding: 12px 15px;
+    font-size: 14px;
+    border-bottom: 1px solid #444444;
+    text-align: left;
+    background-color: #1a1a1a;
+
+}
+
+/* Link Styling */
+.original-table tbody td a {
+    color: #ff004f;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.original-table tbody td a:hover {
+    text-decoration: underline;
+}
+
+/* Handle empty cells */
+.original-table tbody td[colspan] {
+    background-color: #121212;
+    border: none;
+}
+
+/* Alternate Row Colors */
+.original-table tbody tr:nth-child(odd) td {
+    background-color: #141414;
 }
 
 /* -------------------TAGS ---------------------------------------------*/
@@ -760,20 +846,28 @@ form .btn2{
 
 /* ------------------------css for small screen ----------------------------*/
 
+.original-table {
+    display: block; /* Hide the original table on smaller screens */
+}
+
+.responsive-table {
+    display: none; /* Show the responsive table on smaller screens */
+}
 
 
 
-@media only screen and (max-width: 700px){
+@media only screen and (max-width: 700px) {
 
     /*background-image: url(images/background.png);*/ /* the smaller version of the background if ur using one, so you need two versions of it*/
 
-    .header-text{
+    .header-text {
         margin-top: 100%;
         font-size: 16px;
     }
-    .header-text h1{
-        font-size: 30px;
-    }
+
+        .header-text h1 {
+            font-size: 30px;
+        }
 
 
     .about-col-1,
@@ -803,41 +897,67 @@ form .btn2{
 
 
 
-    .project-info table,
-    .project-info thead,
-    .project-info tbody,
-    .project-info th,
-    .project-info td,
-    .project-info tr {
+
+
+    .responsive-table table {
         display: block; /* Make the table block-level for mobile */
-        width: 100%; /* Make sure it spans full width */
+        width: 100%; /* Ensure it spans full width */
     }
 
-    .project-info thead {
+    .responsive-table thead {
         display: none; /* Hide the header in mobile view */
     }
 
-    .project-info tbody tr {
-        margin-bottom: 15px; /* Add spacing between rows */
-        background-color: #1a1a1a;
+    .responsive-table tbody {
+        display: flex; /* Use flexbox to align items */
+        flex-direction: column; /* Stack items vertically */
     }
 
-    .project-info tbody td {
-        text-align: right; /* Align the data text to the right */
-        padding-left: 50%; /* Make room for the pseudo label */
-        position: relative;
+    .responsive-table tbody tr {
+        display: flex; /* Use flexbox for the rows */
+        flex-wrap: wrap; /* Allow wrapping */
+        justify-content: space-between; /* Spread items evenly */
+        /*margin-bottom: 15px;*/ /* Add spacing between rows */
     }
 
-    .project-info tbody td:before {
+    .responsive-table td {
+        flex: 1 1 50%; /* Each cell takes up half the row */
+        min-width: 150px; /* Minimum width for better visibility */
+        position: relative; /* Position for pseudo elements */
+        padding-left: 50%; /* Add padding for labels */
+
+    }
+
+    .responsive-table td:before {
         content: attr(data-label); /* Use the data-label attribute for content */
-        position: absolute;
-        left: 0;
-        width: 50%; /* Labels on the left */
-        padding-left: 15px;
-        font-weight: bold;
-        text-align: left;
-        color: #ffffff;
+        position: absolute; /* Position the label */
+        left: 10px; /* Position from the left */
+        width: auto; /* Auto width for the label */
+        padding-right: 10px;
+        font-weight: bold; /* Make the label bold */
+        color: #ffffff; /* Label color */
     }
+
+    /* Remove margin from the last item in each row */
+    .responsive-table td:last-child {
+        margin-right: 0;
+    }
+
+
+    .original-table {
+        display: none; /* Hide the original table on smaller screens */
+    }
+
+    .responsive-table {
+        display: block; /* Show the responsive table on smaller screens */
+    }
+
+
+
+
+
+
+
 
     .modal-content {
         width: 90%; /* Take up more width on small screens */
