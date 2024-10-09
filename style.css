@@ -16,8 +16,8 @@ body{
 
 #header{
     width: 100%;
-    /*height: 100vh;*/
-    /*background-image: url(images/background.png);*/
+/*    height: 500px;
+    background-image: url(images/background.png);*/
     background-size: cover;
     background-position: center;
 }
@@ -156,40 +156,60 @@ nav ul li a:hover::after{
 
 /* ----------------------------ABIOUT------------------------------------*/
 
-#about{
-    padding: 80px 0;
-    color: #ababab
-}
-
-.row{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    
-}
-
-.about-col-1{
-    flex-basis: 35%;
-}
-
-.about-col-1 img{
-    width: 40%;
-    border-radius: 15px;
-}
-
-.about-col-2{
-    flex-basis: 60%;
-}
-
-.sub-title{
-/*    padding-top: 50px;*/
-    padding-bottom: 30px;
-    font-size: 60px;
-    font-weight: 600;
+#about {
+    padding: 100px 0;
+    background-color: #262626;
+    border-radius: 30px;
     color: #ffffff;
 }
+/*#ababab*/
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
 
-.tab-titles{
+.about-col-1 {
+    flex-basis: 35%;
+    text-align: center; /* Center the image for a balanced look */
+}
+
+.about-col-1 img {
+    width: 80%; /* Set the image size relative to its container */
+    max-width: 250px; /* Limit the image width */
+    border-radius: 30px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Add a subtle shadow for depth */
+    margin-bottom: 20px; /* Add spacing between the image and text on mobile */
+}
+
+.about-col-2 {
+    flex-basis: 60%;
+    padding-left: 30px; /* Add spacing between the image and text */
+}
+
+.about-col-2 p {
+    font-size: 18px;
+    line-height: 1.8; /* Increase line spacing for better readability */
+    margin-bottom: 20px;
+}
+
+
+.sub-title {
+    /*    padding-top: 50px;*/
+    font-size: 48px; /* Adjust the font size */
+    font-weight: 700;
+    color: white; /* Change the title color to add emphasis */
+    margin-bottom: 20px;
+}
+
+.sub-title-red
+{
+    color: red;
+}
+
+
+.tab-titles {
     display: flex;
     margin: 20px 0 40px;
 }
@@ -290,9 +310,8 @@ nav ul li a:hover::after{
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    background-size: contain;
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat;
+    overflow-y: auto; /* Enable scrolling if content is too tall */
+    padding: 20px; /* Add padding for better spacing on small screens */
 }
 
 .hover-image {
@@ -316,16 +335,17 @@ nav ul li a:hover::after{
     background: black;
     padding: 20px;
     border-radius: 10px;
-    width: 100%;
+    width: 90%;
     max-width: 800px;
     text-align: center;
     position: relative;
-    margin: 0 auto; /* Center the modal */
+    margin: auto; /* Center the modal */
     /*box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);  Optional: add shadow */
     background-size: contain;
     background-position: center; /* Center the image */
     background-repeat: no-repeat;
     border: 2px solid white; /* Add a white border */
+    overflow: auto;
 }
 
 /* Add padding to text elements */
@@ -349,13 +369,18 @@ nav ul li a:hover::after{
 /* Close button styles */
 .close-modal {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 15px;
+    right: 15px;
     font-size: 24px;
     cursor: pointer;
     background: none;
     border: none;
     color: white;
+    z-index: 1001;
+}
+
+.close-modal:active {
+    transform: scale(0.7);
 }
 
 /*.modal-content img, .modal-content iframe {
@@ -436,45 +461,54 @@ nav ul li a:hover::after{
     transform: scale(1.05);
 }
 
-
-.project-info {
-    margin-top: 20px;
-    width: 100%;
-    display: flex;
-    justify-content: center; /* Centers the table horizontally */
-}
-
 .project-info table {
-    width: 80%; /* Adjust width as needed */
-    border-collapse: collapse;
-    text-align: center;
-    font-family: 'Courier New', Courier, monospace; /* Similar font */
-    margin: 0 auto;
-    background-color: black;
+    width: 100%; /* Make the table full width */
+    border-collapse: collapse; /* Merge borders for a clean look */
+    font-family: 'Roboto', sans-serif; /* Modern, clean font */
+    color: #ffffff; /* Font color */
+    background-color: #121212; /* Dark background for the table */
 }
 
-.project-info th, td {
-    padding: 10px 20px;
-    border-bottom: 1px solid #ccc;
+/* Header Styling */
+.project-info thead th {
+    background-color: #ff004f; /* Highlight header with accent color */
+    color: #ffffff;
+    padding: 15px; /* Add padding for better spacing */
+    font-size: 16px;
+    font-weight: 700; /* Make the headers bold */
+    text-align: left; /* Align text to the left */
+    border-bottom: 2px solid #444444; /* Add a border below headers */
 }
 
-.project-info th {
-    font-weight: bold;
-    font-size: 1.2em;
+/* Body Styling */
+.project-info tbody td {
+    padding: 12px 15px; /* Add padding for better spacing */
+    font-size: 14px;
+    border-bottom: 1px solid #444444; /* Border between rows */
+    text-align: left;
+    background-color: #1a1a1a; /* Slightly lighter background for rows */
 }
 
-.project-info td a {
-    color: #3498db;
+/* Link Styling */
+.project-info tbody td a {
+    color: #ff004f; /* Match link color with the header accent */
     text-decoration: none;
+    font-weight: 500; /* Make the links stand out slightly */
 }
 
-.project-info td a:hover {
-    text-decoration: underline;
+.project-info tbody td a:hover {
+    text-decoration: underline; /* Underline on hover for visibility */
 }
 
-/* Ensures cells without content stay empty */
-.project-info td[colspan="3"] {
-    border-bottom: none;
+/* Handle empty cells */
+.project-info tbody td[colspan] {
+    background-color: #121212; /* Match the background to make it seamless */
+    border: none; /* Remove borders for empty cells */
+}
+
+/* Alternate Row Colors */
+.project-info tbody tr:nth-child(odd) td {
+    background-color: #141414; /* Darker color for alternate rows */
 }
 
 /* -------------------TAGS ---------------------------------------------*/
@@ -742,14 +776,81 @@ form .btn2{
     }
 
 
-    .about-col-1, about-col-2{
-        flex-basis: 100%;
+    .about-col-1,
+    .about-col-2 {
+        flex-basis: 100%; /* Make both columns full width */
+        text-align: center; /* Center the text on mobile */
     }
 
-    .about-col-1{
-        margin-bottom: 30px;
+    .about-col-2 {
+        padding-left: 0;
+        padding-top: 20px;
     }
 
+    .about-col-1 img {
+        width: 50%;
+        max-width: 150px;
+    }
+
+
+    .sub-title {
+        font-size: 36px;
+    }
+
+    .about-col-2 p {
+        font-size: 16px;
+    }
+
+
+
+    .project-info table,
+    .project-info thead,
+    .project-info tbody,
+    .project-info th,
+    .project-info td,
+    .project-info tr {
+        display: block; /* Make the table block-level for mobile */
+        width: 100%; /* Make sure it spans full width */
+    }
+
+    .project-info thead {
+        display: none; /* Hide the header in mobile view */
+    }
+
+    .project-info tbody tr {
+        margin-bottom: 15px; /* Add spacing between rows */
+        background-color: #1a1a1a;
+    }
+
+    .project-info tbody td {
+        text-align: right; /* Align the data text to the right */
+        padding-left: 50%; /* Make room for the pseudo label */
+        position: relative;
+    }
+
+    .project-info tbody td:before {
+        content: attr(data-label); /* Use the data-label attribute for content */
+        position: absolute;
+        left: 0;
+        width: 50%; /* Labels on the left */
+        padding-left: 15px;
+        font-weight: bold;
+        text-align: left;
+        color: #ffffff;
+    }
+
+    .modal-content {
+        width: 90%; /* Take up more width on small screens */
+        max-width: 100%;
+        margin: 20px auto;
+        padding: 15px;
+    }
+
+    .close-modal {
+        font-size: 30px; /* Make the close button bigger on smaller screens */
+        top: 10px;
+        right: 10px;
+    }
 
 
     .skills-grid {
