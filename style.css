@@ -52,12 +52,15 @@ nav .fa-solid {
 
 nav .fa-solid.fa-bars {
     position: fixed; 
-    right: 10px; 
-    top: 10px; 
-    font-size: 25px;
+    left: 25px; 
+    top: 25px; 
+    font-size: 40px;
     cursor: pointer;
 }
 
+nav .fa-solid.fa-xmark {
+    font-size: 40px;
+}
 
 nav logo {
     width: 200px auto;
@@ -73,7 +76,7 @@ nav ul {
     height: 100vh;
     padding-top: 50px;
     z-index: 2;
-    transition: right 0.25s;
+    transition: left 0.25s;
 }
 
 nav ul li {
@@ -170,7 +173,7 @@ nav ul li a:hover::after{
 }
 
 .about-col-1 img{
-    width: 80%;
+    width: 40%;
     border-radius: 15px;
 }
 
@@ -618,6 +621,11 @@ nav ul li a:hover::after{
     margin-bottom: 20px;
 }
 
+
+.proficiency-icon {
+    font-size: 0.6em; /* Adjust the size as needed, e.g., 0.8em makes it smaller */
+    margin-right: 5px; /* Optional: Adjust the space between the circle and text */
+}
 
 
 /*----------------------------Contact -----------------------------------*/

@@ -25,7 +25,7 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#portofolio">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <i class="fa-solid fa-xmark" onclick="CloseMenu()"></i>
+                    <li><i class="fa-solid fa-xmark" onclick="CloseMenu()"></i></li>
                 </ul>
                 <i class="fa-solid fa-bars" onclick="OpenMenu()"></i>
             </nav>
@@ -334,7 +334,6 @@
                         </tr>
                         <tr>
                             <td colspan="3"></td> <!-- Empty cells to span the previous columns -->
-                            <td>Justin Knobbout</td>
                         </tr>
                     </tbody>
                 </table>
@@ -366,56 +365,64 @@
             <h1 class="sub-title">Skills</h1>
             <hr class="divider">
 
+            <p><i class="fa-solid fa-circle proficiency-icon"></i> = Proficient</p>
+            <p><i class="fa-regular fa-circle proficiency-icon"></i> = Some Experience</p>
+
+            <hr class="empty-divider small-divider">
+
             <div class="skills-grid">
                 <div class="skill-card big-card">
-                    <h3>SOFTWARE</h3>
+                    <h3><i class="fa-solid fa-gear"></i> SOFTWARE</h3>
                     <hr class="divider">
 
                     <ul>
-                        <li><strong>GAME ENGINES</strong></li>
-                        <li>Unreal Engine 4/5</li>
-                        <li>Unity</li>
+                        <li><i class="fa-solid fa-gamepad"></i><strong> GAME ENGINES</strong></li>
+                        <li><i class="fa-solid fa-circle proficiency-icon"></i> Unreal Engine 4/5</li>
+                        <li><i class="fa-solid fa-circle proficiency-icon"></i> Unity</li>
                     </ul>
                     <ul>
-                        <li><strong>SOURCE CONTROL</strong></li>
-                        <li>Git</li>
-                        <li>Perforce</li>
+                        <li><i class="fa-solid fa-cloud"></i><strong> SOURCE CONTROL</strong></li>
+                        <li><i class="fa-solid fa-circle proficiency-icon"></i> Github</li>
+                        <li><i class="fa-solid fa-circle proficiency-icon"></i> Perforce</li>
                     </ul>
                     <ul>
-                        <li><strong>TOOLS</strong></li>
-                        <li>Maya</li>
-                        <li>Photoshop</li>
-                        <li>Houdini</li>
-                        <li>Premiere Pro</li>
+                        <li><i class="fa-solid fa-screwdriver-wrench"></i><strong> TOOLS</strong></li>
+                        <li><i class="fa-solid fa-circle proficiency-icon"></i> Visual Studio</li>
+                        <li><i class="fa-regular fa-circle proficiency-icon"></i> Maya</li>
+                        <li><i class="fa-regular fa-circle proficiency-icon"></i> Photoshop</li>
+                        <li><i class="fa-regular fa-circle proficiency-icon"></i> Houdini</li>
+                        <li><i class="fa-regular fa-circle proficiency-icon"></i> Premiere Pro</li>
                     </ul>
                     <ul>
-                        <li><strong>API's/LIBRARIES</strong></li>
-                        <li>SDL</li>
-                        <li>OpenGL</li>
-                        <li>Dear ImGui</li>
+                        <li><i class="fa-solid fa-cube"></i><strong> API's/LIBRARIES</strong></li>
+                        <li><i class="fa-solid fa-circle proficiency-icon"></i> SDL</li>
+                        <li><i class="fa-regular fa-circle proficiency-icon"></i> OpenGL</li>
+                        <li><i class="fa-regular fa-circle proficiency-icon"></i> Dear ImGui</li>
+                        <li><i class="fa-regular fa-circle proficiency-icon"></i> DirectX 11</li>
+                        <li><i class="fa-regular fa-circle proficiency-icon"></i> Vulkan</li>
                     </ul>
                 </div>
                 <div class="small-cards">
                     <div class="skill-card small-card">
-                        <h3>PROGRAMMING LANGUAGES</h3>
+                        <h3><i class="fa-solid fa-code"></i> PROGRAMMING LANGUAGES</h3>
                         <hr class="divider">
                         <ul>
-                            <li>C++</li>
-                            <li>C#</li>
-                            <li>XAML</li>
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>Lua</li>
+                            <li><i class="fa-solid fa-circle proficiency-icon"></i> C++</li>
+                            <li><i class="fa-solid fa-circle proficiency-icon"></i> C#</li>
+                            <li><i class="fa-regular fa-circle proficiency-icon"></i> XAML</li>
+                            <li><i class="fa-regular fa-circle proficiency-icon"></i> HTML</li>
+                            <li><i class="fa-regular fa-circle proficiency-icon"></i> CSS</li>
+                            <li><i class="fa-regular fa-circle proficiency-icon"></i> Lua</li>
 
                         </ul>
                     </div>
 
                     <div class="skill-card small-card">
-                        <h3>HUMAN LANGUAGES</h3>
+                        <h3><i class="fa-solid fa-comments"></i> HUMAN LANGUAGES</h3>
                         <hr class="divider">
                         <ul>
                             <li>Dutch - Native</li>
-                            <li>English - Fluent</li>
+                            <li>English - Professional Proficient</li>
                             <li>Spanish - Moderate</li>
                         </ul>
                     </div>
@@ -464,19 +471,19 @@
 
 
                 <!--Dual Rastrizer-->
-                <div class="project" data-bg="Images/BinaryBanditsBG.png" data-project="o-2">
+                <!--<div class="project" data-bg="Images/BinaryBanditsBG.png" data-project="o-2">
                     <img src="Images/BinaryBandits.png" class="thumbnail" />
                     <img src="Images/BinaryBandits.png" class="hover-image" style="display: none;" />
 
-                </div>
+                </div>-->
 
 
                 <!--Vulkan project -->
-                <div class="project" data-bg="Images/BinaryBanditsBG.png" data-project="o-3">
+                <!--<div class="project" data-bg="Images/BinaryBanditsBG.png" data-project="o-3">
                     <img src="Images/BinaryBandits.png" class="thumbnail" />
                     <img src="Images/BinaryBandits.png" class="hover-image" style="display: none;" />
 
-                </div>
+                </div>-->
 
 
 
@@ -721,11 +728,11 @@
         var sidemenu = document.getElementById("sidemenu");
 
         function OpenMenu() {
-            sidemenu.style.right = "0";
+            sidemenu.style.left = "0";
         }
 
         function CloseMenu() {
-            sidemenu.style.right = "-200px";
+            sidemenu.style.left = "-200px";
         }
 
 
