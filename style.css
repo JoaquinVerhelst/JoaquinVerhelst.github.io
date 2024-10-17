@@ -136,6 +136,12 @@ nav ul li a:hover::after{
 }
 
 
+.highlight {
+    /*background-color: red;*/
+    color: red;
+}
+
+
 .empty-divider {
     border: none;
     height: 1px;
