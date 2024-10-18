@@ -1,0 +1,435 @@
+* {
+    margin: 0;
+    padding: 0;
+    /*font-family: 'Poppins', sans-serif;*/
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    /*background: #080808;*/
+    color: #fff;
+    font-family: 'Press Start 2P', 'Roboto', sans-serif;
+    font-size: 14px;
+    background: linear-gradient(270deg, #ff6b6b, #f7c8a9);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    color: white; /* Change text color for better readability */
+
+    margin: 40px auto;
+    /*max-width: 800px;*/
+    line-height: 1.8;
+    padding: 0 100px;
+}
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* ----------------------------General stuff------------------------------------*/
+
+
+.title {
+    font-size: 48px;
+    font-weight: 700;
+    color: white;
+    /*margin-bottom: 20px;*/
+    text-align: center;
+}
+
+.project-info {
+    padding: 100px 200px;
+    background-color: #262626;
+    border-radius: 30px;
+    color: #ffffff;
+}
+
+.project-info p {
+    text-align: left;
+}
+
+.project-info h3,
+.project-info h2,
+.project-info p {
+    padding: 10px 20px; /* Add padding around text elements */
+    /* Reset margin to avoid extra space */
+
+}
+
+.project-info h2,
+.project-info h3 {
+    text-decoration: underline;
+}
+
+
+.project-info h3{
+    text-align: center;
+}
+
+.divider {
+    border: none;
+    height: 1px;
+    background-color: white;
+    margin-top: 1px 0;
+    margin-bottom: 20px;
+}
+
+.empty-divider {
+    border: none;
+    height: 1px;
+    background-color: none;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+
+.small-divider {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+
+
+
+
+.video-container {
+    position: relative;
+    width: 80%; /* Set the width as a percentage of the parent container */
+    max-width: 800px; /* Maximum width of the video container */
+    height: auto; /* Let height adjust automatically based on the width */
+    aspect-ratio: 16 / 9; /* Maintain 16:9 aspect ratio */
+    margin: 0 auto; /* Center the video horizontally */
+    background-color: #000; /* Optional: Black background for a clean look */
+    border-radius: 10px; /* Optional: Rounds the edges for a sleek look */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Optional: Adds a subtle shadow */
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Fills the container's height and width */
+    border: none; /* Remove iframe border */
+    border-radius: 10px; /* Matches container’s rounded corners */
+}
+
+.link-container {
+    display: flex; /* Optional: Center the icon */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+.link-container a {
+    font-size: 36px; /* Adjust size as needed */
+    color: white; /* Change color as desired */
+    transition: transform 0.2s; /* Optional: Add hover effect */
+}
+
+.link-container a:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+
+.gif-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+
+}
+
+.gif-container img {
+    width: calc(50% - 10px);
+    height: auto;
+    border-radius: 20px;
+    display: block;
+    transition: all 0.3s ease-in-out;
+}
+
+
+    .gif-container img:nth-child(odd):last-child {
+        width: calc(60%);
+        margin: 0 auto;
+        transform: scale(1.05);
+    }
+
+
+/* ---------------------------- Menu ------------------------------------*/
+
+nav ul {
+    position: fixed;
+    top: 0;
+    left: 0; /* Set to left for horizontal navigation */
+    width: 100%; /* Full width of the container */
+    height: auto; /* Adjust height for horizontal display */
+    padding: 20px 0; /* Add padding on the top and bottom */
+    z-index: 2;
+    display: flex; /* Use flexbox for horizontal layout */
+    justify-content: center; /* Center items horizontally */
+    background-color: #262626; /* Optional: background color */
+}
+
+nav ul li {
+    display: inline-block; /* Change to inline-block for horizontal layout */
+    margin: 0 25px; /* Adjust margins as needed */
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+
+
+
+
+/* ----------------------------Credits / Tables ------------------------------------*/
+
+.project-credits {
+    text-align: center;
+}
+
+
+.project-credits table {
+    position: relative;
+    margin: 0 auto;
+    max-width: 800px; /* Adjust max-width as needed */
+    width: 100%; /* Allow tables to take full width within max-width */
+}
+
+.original-table table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+    background-color: #121212;
+    margin: 0 auto;
+}
+
+/* Header Styling */
+.original-table thead th {
+    background-color: #ff004f;
+    color: #ffffff;
+    padding: 15px;
+    font-size: 12px;
+    font-weight: 700;
+
+    border-bottom: 2px solid #444444;
+}
+
+/* Body Styling */
+.original-table tbody td {
+    padding: 12px 15px;
+    font-size: 12px;
+    border-bottom: 1px solid #444444;
+
+    background-color: #1a1a1a;
+}
+
+    /* Link Styling */
+.original-table tbody td a {
+    color: #ff004f;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.original-table tbody td a:hover {
+    text-decoration: underline;
+}
+
+/* Handle empty cells */
+.original-table tbody td[colspan] {
+    background-color: #121212;
+    border: none;
+}
+
+/* Alternate Row Colors */
+.original-table tbody tr:nth-child(odd) td {
+    background-color: #141414;
+}
+
+
+
+.responsive-table table {
+    width: 100%; /* Make the table full width */
+    border-collapse: collapse; /* Merge borders for a clean look */
+    font-family: 'Roboto', sans-serif; /* Modern, clean font */
+    color: #ffffff; /* Font color */
+    background-color: #121212; /* Dark background for the table */
+}
+
+/* Body Styling */
+.responsive-table tbody td {
+    padding: 12px 15px; /* Add padding for better spacing */
+    font-size: 14px;
+    border-bottom: 1px solid #444444; /* Border between rows */
+    text-align: left;
+    background-color: #1a1a1a; /* Slightly lighter background for rows */
+}
+
+    /* Header Styling (not used in this structure) */
+    /* .project-info thead th { 
+    background-color: #ff004f; 
+    color: #ffffff; 
+    padding: 15px; 
+    font-size: 16px; 
+    font-weight: 700; 
+    text-align: left; 
+    border-bottom: 2px solid #444444; 
+} */
+
+    /* Link Styling */
+.responsive-table tbody td a {
+    color: #ff004f; /* Match link color with the header accent */
+    text-decoration: none;
+    font-weight: 500; /* Make the links stand out slightly */
+}
+
+.responsive-table tbody td a:hover {
+    text-decoration: underline; /* Underline on hover for visibility */
+}
+
+/* Handle empty cells */
+.responsive-table tbody td[colspan] {
+    background-color: #121212; /* Match the background to make it seamless */
+    border: none; /* Remove borders for empty cells */
+}
+
+/* Alternate Row Colors */
+.responsive-table tbody tr:nth-child(odd) td {
+    background-color: #141414; /* Darker color for alternate rows */
+}
+
+
+
+
+/* ------------------------css for small screen ----------------------------*/
+
+.original-table {
+    display: block; /* Hide the original table on smaller screens */
+}
+
+.responsive-table {
+    display: none; /* Show the responsive table on smaller screens */
+}
+
+
+@media only screen and (max-width: 2000px) and (min-width: 1501px) {
+    .project-info {
+        padding: 80px 150px; /* Adjust padding for mid-sized screens */
+    }
+}
+
+
+@media only screen and (max-width: 1500px) and (min-width: 1001px) {
+    .project-info {
+        padding: 60px 50px; /* Adjust padding for mid-sized screens */
+    }
+}
+
+
+
+@media only screen and (max-width: 1000px) {
+
+
+
+    .project-info {
+        padding: 50px 5px;
+    }
+
+
+
+
+    .responsive-table table {
+        display: block; /* Make the table block-level for mobile */
+        width: 100%; /* Ensure it spans full width */
+    }
+
+    .responsive-table thead {
+        display: none; /* Hide the header in mobile view */
+    }
+
+    .responsive-table tbody {
+        display: flex; /* Use flexbox to align items */
+        flex-direction: column; /* Stack items vertically */
+    }
+
+        .responsive-table tbody tr {
+            display: flex; /* Use flexbox for the rows */
+            flex-wrap: wrap; /* Allow wrapping */
+            justify-content: space-between; /* Spread items evenly */
+            /*margin-bottom: 15px;*/ /* Add spacing between rows */
+        }
+
+    .responsive-table td {
+        flex: 1 1 50%; /* Each cell takes up half the row */
+        min-width: 150px; /* Minimum width for better visibility */
+        position: relative; /* Position for pseudo elements */
+        padding-left: 50%; /* Add padding for labels */
+    }
+
+        .responsive-table td:before {
+            content: attr(data-label); /* Use the data-label attribute for content */
+            position: absolute; /* Position the label */
+            left: 10px; /* Position from the left */
+            width: auto; /* Auto width for the label */
+            padding-right: 10px;
+            font-weight: bold; /* Make the label bold */
+            color: #ffffff; /* Label color */
+        }
+
+        /* Remove margin from the last item in each row */
+        .responsive-table td:last-child {
+            margin-right: 0;
+        }
+
+
+    .original-table {
+        display: none; /* Hide the original table on smaller screens */
+    }
+
+    .responsive-table {
+        display: block; /* Show the responsive table on smaller screens */
+    }
+
+
+}
+
+
+
+@media only screen and (max-width: 700px) {
+
+    nav ul li a {
+        font-size: 14px;
+    }
+}

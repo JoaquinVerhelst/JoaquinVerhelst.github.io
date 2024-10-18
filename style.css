@@ -1,7 +1,7 @@
 ﻿*{
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
+    /*font-family: 'Poppins', sans-serif;*/
     box-sizing: border-box;
 }
 
@@ -9,9 +9,11 @@ html{
     scroll-behavior: smooth;
 }
 
-body{
+body {
     background: #080808;
     color: #fff;
+    font-family: 'Press Start 2P', 'Roboto', sans-serif;
+    font-size: 14px;
 }
 
 #header{
@@ -164,7 +166,7 @@ nav ul li a:hover::after{
 
 #about {
     padding: 100px 0;
-    background-color: #262626;
+/*    background-color: #262626;*/
     border-radius: 30px;
     color: #ffffff;
 }
@@ -195,7 +197,7 @@ nav ul li a:hover::after{
 }
 
 .about-col-2 p {
-    font-size: 18px;
+    font-size: 14px;
     line-height: 1.8; /* Increase line spacing for better readability */
     margin-bottom: 20px;
 }
@@ -362,9 +364,13 @@ nav ul li a:hover::after{
 .modal-content h2,
 .modal-content p {
     padding: 10px 20px; /* Add padding around text elements */
-    margin: 0; /* Reset margin to avoid extra space */
+    /* Reset margin to avoid extra space */
+    line-height: 1.6;
 }
 
+.modal-content h2, .modal-content h3 {
+    text-decoration: underline;
+}
 
 /* Scrollbar styling for WebKit browsers (Chrome, Safari) */
 .modal::-webkit-scrollbar {
@@ -565,7 +571,7 @@ nav ul li a:hover::after{
     background-color: #ff004f;
     color: #ffffff;
     padding: 15px;
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 700;
     text-align: left;
     border-bottom: 2px solid #444444;
@@ -574,7 +580,7 @@ nav ul li a:hover::after{
 /* Body Styling */
 .original-table tbody td {
     padding: 12px 15px;
-    font-size: 14px;
+    font-size: 12px;
     border-bottom: 1px solid #444444;
     text-align: left;
     background-color: #1a1a1a;
