@@ -27,10 +27,65 @@
 
 
         <p>This is the description for Bomberman.</p>
+
+
+        <div class="tab-titles">
+            <p class="tab-links active-link" onclick="opentab('A*')">A*</p>
+            <p class="tab-links" onclick="opentab('SoundWithThreads')">Sound With Threads</p>
+            <p class="tab-links" onclick="opentab('ServiceLocator')">Education</p>
+        </div>
+
+
+        <div class="tab-contents active-tab" id="skills">
+            <ul>
+                <li><span>GD</span><br>Game Developer/programmer</li>
+                <li><span>Unity</span><br>Games</li>
+                <li><span>Unreal Engine 5</span><br>Games</li>
+            </ul>
+        </div>
+        <div class="tab-contents" id="experience">
+            <ul>
+                <li><span>2020- Current</span><br>DAE Student</li>
+            </ul>
+        </div>
+        <div class="tab-contents" id="education">
+            <ul>
+                <li><span>Secundairy School</span><br>Wetenschappen Wiskunde - Sint-GummarusCollege</li>
+                <li><span>Univeristy</span><br>DAE</li>
+            </ul>
+        </div>
+
+
+
+
         <div>
             <h3>Technical Details</h3>
             <p>Some technical details about Project 5.</p>
         </div>
+
+
     </div>
+
+
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links")
+        var tabcontents = document.getElementsByClassName("tab-contents")
+        function opentab(tabname) {
+            for (tablink of tablinks) {
+                tablink.classList.remove("active-link")
+            }
+            for (tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab")
+            }
+
+            event.currentTarget.classList.add("active-link")
+            document.getElementById(tabname).classList.add("active-tab");
+
+
+        }
+
+    </script>
+
+
 </body>
 </html>

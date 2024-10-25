@@ -52,10 +52,71 @@
 
 
 
-        <hr class="empty-divider small-divider">
+        <h4>Spy Player Controller</h4>
+        <p>
+            I developed the Spy player controller from scratch, handling movement mechanics, the stun gun functionality and when you lose.
+        </p>
 
-        <h3>What I Did</h3>
-        <p>This is my first Unreal Engine project, where I fully embraced the C++ side of UE and kept the usage of blueprints to the minimum. Throughout the development, I gained a deeper understanding of how Unreal Engine operates. I built the Spy player controller from scratch, programmed everything related to the AI for the enemies, and created the hackable objects, including doors, cameras, and lasers. </p>
+        <div class="gif-container">
+            <video controls autoplay loop muted>
+                <source src="../Images/BinaryBandits/Spy.mp4" type="video/mp4">
+            </video>
+        </div>
+
+
+        <div class="empty-divider small-divider"></div>
+
+        <h4>
+            AI
+        </h4>
+
+        <p>
+            I created the AI system, which patrols along a set path. Using Unreal Engine's Blackboard and behavior trees,
+            I programmed all behaviors in C++, with only VFX handled in Blueprints.
+            The AI can detect and chase the player when spotted.
+        </p>
+
+        <p>
+            The patrol path is fully customizable using a PatrolPath object,
+            allowing for an unlimited number of waypoints, adjustable wait times at each point,
+            direction the Ai is facing, and if it needs to directly go to the next point.
+        </p>
+
+        <div class="gif-container">
+            <video controls autoplay loop muted>
+                <source src="../Images/BinaryBandits/Patrol.mp4" type="video/mp4">
+            </video>
+            <video controls autoplay loop muted>
+                <source src="../Images/BinaryBandits/Chasing.mp4" type="video/mp4">
+            </video>
+        </div>
+
+
+
+        <div class="empty-divider small-divider"></div>
+
+
+
+        <h4>Hackable Objects</h4>
+
+        <p>
+            I programmed the behavior for all hackable objects, including cameras, lasers, doors, and distractible objects. There are two typed of doors, one you have to hack to open or close it, and the other only opens when a AI is close to it.
+            The camera's and lasers set off an alarm when being seen/touched by them. You can probably guess what the distractable object does, it distracts any close AI, so that the spy can easily walk past them.
+
+        </p>
+
+
+        <div class="gif-container">
+
+            <video controls autoplay loop muted>
+                <source src="../Images/BinaryBandits/HackObjects.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="empty-divider small-divider"></div>
+
+
+
 
 
         <div class="empty-divider small-divider"></div>

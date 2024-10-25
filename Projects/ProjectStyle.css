@@ -161,10 +161,34 @@ body {
 
 
     .gif-container img:nth-child(odd):last-child {
-        width: calc(60%);
         margin: 0 auto;
-        transform: scale(1.05);
+
     }
+
+
+    .gif-container video {
+        width: calc(50% - 10px);
+        height: auto;
+        border-radius: 20px;
+        display: block;
+        transition: all 0.3s ease-in-out;
+    }
+
+
+        .gif-container video:nth-child(odd):last-child {
+            margin: 0 auto;
+        }
+
+.video-container {
+    width: 100%; /* Adjust the width as needed */
+    max-width: 800px; /* Limit the maximum width */
+    margin: 0 auto; /* Center the video on the page */
+}
+
+video {
+    width: 100%; /* Make the video responsive */
+    border-radius: 10px; /* Optional: Add some rounded corners */
+}
 
 
 /* ---------------------------- Menu ------------------------------------*/
@@ -329,6 +353,73 @@ nav ul li a:hover::after {
 .responsive-table tbody tr:nth-child(odd) td {
     background-color: #141414; /* Darker color for alternate rows */
 }
+
+
+
+/* ------------------------ Tab Links ----------------------------*/
+
+
+
+
+.tab-titles {
+    display: flex;
+    margin: 20px 0 40px;
+}
+
+.tab-links {
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+
+    .tab-links::after {
+        content: '';
+        width: 0;
+        height: 3px;
+        background: #ff004f;
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        transition: 0.5s;
+    }
+
+    .tab-links.active-link::after {
+        width: 50%;
+    }
+
+.tab-contents ul li {
+    list-style: none;
+    margin: 10px 0;
+}
+
+    .tab-contents ul li span {
+        color: #b54769;
+        font-size: 14px;
+    }
+
+.tab-contents {
+    display: none;
+}
+
+    .tab-contents.active-tab {
+        display: block;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -170,6 +170,16 @@ nav ul li a:hover::after{
     border-radius: 30px;
     color: #ffffff;
 }
+
+
+#about .social-icons a{
+    font-size: 50px;
+}
+
+
+
+
+
 /*#ababab*/
 .row {
     display: flex;
