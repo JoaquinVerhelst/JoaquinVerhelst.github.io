@@ -24,6 +24,12 @@
         </nav>
         <h1 class="title">Jotar 2D Engine</h1>
 
+
+        <div class="link-container">
+            <a href="https://github.com/JoaquinVerhelst/Jotar2DEngine"><i class="fa-brands fa-github"></i></a>
+        </div>
+
+
         <p>
             The Jotar2D Engine is a simple 2D game development engine in C++ that has been my learning ground for C++ programming and design patterns. The engine includes essential features for building and managing a 2D game:
         </p>
@@ -85,7 +91,7 @@
 
 <span class="keyword">if</span> (<span class="object">playerObj</span>-><span class="function">HasComponent</span><<span class="objType">ColliderComponent</span>>())
 {
-        <span class="object">playerObj</span>-><span class="function">RemoveComponent</span><<span class="objType">ColliderComponent</span>>();
+            <span class="object">playerObj</span>-><span class="function">RemoveComponent</span><<span class="objType">ColliderComponent</span>>();
 }
             </code></pre>
         </div>
@@ -140,16 +146,16 @@
 
 <span class="type">class</span> <span class="objType">HealthDisplayComponent</span> <span class="type">final</span> : <span class="type">public</span> <span class="objType">Component</span>, <span class="type">public</span> <span class="objType">Observer</span><<span class="objType">Event</span>> { <span class="comment">// Add the Observer with the eventType</span>
 
-    <span class="comment">// ... other functions </span>
+            <span class="comment">// ... other functions </span>
 
-    <span class="type">void</span> <span class="function">OnNotify</span>(<span class="type">const</span> <span class="objType">Event</span>& <span class="object">event</span>) <span class="type">override</span>; <span class="comment">// override the function</span>
+            <span class="type">void</span> <span class="function">OnNotify</span>(<span class="type">const</span> <span class="objType">Event</span>& <span class="object">event</span>) <span class="type">override</span>; <span class="comment">// override the function</span>
 
 }
 
 
 <span class="type">void</span> Jotar::<span class="objType">HealthDisplayComponent</span>::<span class="function">OnNotify</span>(<span class="type">const</span> <span class="objType">Event</span>& <span class="object">event</span>)
 {
-    <span class="keyword">if</span> (<span class="type">typeid</span>(<span class="object">event</span>)) == <span class="type">typeid</span>(<span class="objType">DamageHealthEvent</span>))
+            <span class="keyword">if</span> (<span class="type">typeid</span>(<span class="object">event</span>)) == <span class="type">typeid</span>(<span class="objType">DamageHealthEvent</span>))
     {
             <span class="comment">// ... </span>
     }
