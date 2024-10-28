@@ -4,7 +4,7 @@
     <meta charset="UTF-89">
     <meta http-equiv="x-ua-compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Binary Bandits</title>
+    <title>Reach The Peak</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="ProjectStyle.css">
     <script src="https://kit.fontawesome.com/00d7ca3016.js" crossorigin="anonymous"></script>
@@ -30,10 +30,78 @@
             <a href="https://joquillan.itch.io/reach-the-peak"><i class="fa-brands fa-itch-io"></i></a>
         </div>
 
-        <p>Reach The Peak is a (singleplayer and/or) online multiplayer Co-op game where players must survive in an endless maze of dungeons. Collect skill books that grant you offensive, defensive, and utility skills to enhance your chances of survival. As you progress, you’ll need to grow stronger to venture deeper into the abyss and ultimately reach the peak of your abilities to escape the labyrinth of dungeons! </p>
+
+
+
+
+
+
+
+        <p>
+            Reach The Peak is a (singleplayer and/or) online multiplayer Co-op game where you are stuck in an Dungeon.
+            Collect skill books that grant you offensive, defensive, and utility skills to enhance your chances of survival.
+            As you progress, you’ll need to grow stronger to venture deeper into the abyss and ultimately reach the peak of your
+            abilities to escape the labyrinth of dungeons!
+        </p>
 
         <hr class="empty-divider small-divider">
 
+        <h3>About the Game</h3>
+
+
+        <p>
+            This is a passion project where I currently invest most of my time. I don’t have a specific release date in mind—I’m creating this purely
+            for the experience and enjoyment. It’s a <span class="highlight">small, 2D, top-down, cooperative online multiplayer dungeon-crawler RPG</span>. Although it sounds ambitious
+            and may be quite a large undertaking for a solo developer, I’m committed to the goal and am making steady progress. I plan to release a basic
+            version as soon as possible, with the intention of adding more content through future updates.
+        </p>
+
+        <p>
+            As a programmer rather than an artist, creating visually appealing designs isn’t my strong suit, but I’ll do my best. :)
+        </p>
+
+        <p>
+            Currently, the gameplay is limited, but most core mechanics have been implemented.
+        </p>
+
+
+
+        <hr class="empty-divider small-divider">
+
+
+        <h3>First Goal</h3>
+
+
+        <hr class="empty-divider small-divider">
+
+        <div class="list">
+            <ul>
+                <li><a href="#playerController">Player controller</a></li>
+                <li><a href="#skills">skills to support varied playstyles</a></li>
+                <li><a href="#inventoryAndItem">Inventory and Item System</a></li>
+                <li><a href="#multiplayer">Online cooperative multiplayer</a></li>
+                <li><a href="#saveLoad">Saving and loading functionality</a> </li>
+                <li> <a href="#enemies">Three or more enemy types</a></li>
+                <li><a href="#dungeonGeneration"> Simple procedural dungeons</a></li>
+            </ul>
+        </div>
+
+
+
+        <div id="playerController"></div>
+
+        <hr class="empty-divider">
+
+
+
+        <h4>Player controller</h4>
+
+        <p>
+            The player can dash to evade enemies, attack, activate skills for offense or defense, and pick up and hold items. All of these
+            features are programmed except for dashing. There’s also a leveling system—players absorb essence from defeated monsters to
+            gain levels. Skills can further boost stats, providing additional ways to strengthen characters.
+
+        </p>
 
 
         <div class="gif-container">
@@ -44,6 +112,54 @@
         <hr class="empty-divider small-divider">
 
         <div class="gif-container">
+            <img src="../Images/ReachThePeak/absorb.gif" />
+        </div>
+
+
+
+        <div id="skills"></div>
+
+        <hr class="empty-divider">
+
+        <h4>Skills</h4>
+
+        <p>
+            Skills can be <span class="highlight">active</span> or <span class="highlight"> passive </span>.
+            Active skills allow specific actions, like attacking with a sword or conjuring a stone wall
+            for defense. Passive skills, in contrast, improve stats based on certain actions, such as defeating enemies
+            for combat passives or blocking for defensive passives.
+
+        </p>
+
+        <hr class="empty-divider small-divider">
+
+        <div class="list">
+            <ul>
+                <li><span class="highlight"><strong>Base Skills</strong></span>  – Passive skills only.</li>
+                <li><span class="highlight"><strong>Special Skills</strong></span>  – Primarily active but may also be passive.</li>
+                <li>
+                    <span class="highlight">
+                        <strong> Utility Skills </strong>
+                    </span> – Active, passive, or both; typically offering buffs, like permanent lighting, enhanced vision,
+                    or dash-related abilities.
+                </li>
+            </ul>
+        </div>
+
+        <p>
+            To gather skills, players must find skill books, which vary in quality and usefulness.
+        </p>
+
+        <hr class="empty-divider small-divider">
+
+
+        <div class="gif-container">
+            <img src="../Images/ReachThePeak/skillInv.gif" />
+            <img src="../Images/ReachThePeak/skills.gif" />
+        </div>
+        <hr class="empty-divider small-divider">
+
+        <div class="gif-container">
 
             <img src="../Images/ReachThePeak/SkillShowCase.gif" />
         </div>
@@ -51,6 +167,108 @@
 
         <hr class="empty-divider small-divider">
 
+
+        <h4 id="inventoryAndItem">Inventory And Item system</h4>
+
+        <p>
+            An inventory and item system is in place, though currently there are only a few items—a sword, some tools, and skill books.
+            The item system is designed for scalability, allowing for easy addition of future items like different swords, armor,
+            and crafting materials.
+        </p>
+
+        <hr class="empty-divider small-divider">
+
+        <div class="gif-container">
+
+            <img src="../Images/ReachThePeak/Inventory.gif" />
+        </div>
+
+
+
+        <hr class="empty-divider small-divider">
+
+
+        <h4 id="multiplayer">Online Cooperative Multiplayer</h4>
+
+        <p>
+            When I began this project, I underestimated the difficulty of making a multiplayer game. However, with the
+            <a href="https://docs-multiplayer.unity3d.com/netcode/current/about/">"Netcode for GameObject" </a> package in Unity,
+            all current features are now functional in multiplayer. Players can connect through a code generated by Unity Cloud Relay
+            service, one friend hosts the game and shares their code for others to join.
+        </p>
+
+        <hr class="empty-divider small-divider">
+
+
+        <h4 id="saveLLoad">Saving and Loading</h4>
+
+        <p>
+            This feature is also functional, using JSON to save inventory, skills, skill levels, and player stats.
+        </p>
+
+        <hr class="empty-divider small-divider">
+
+
+        <h4 id="enemies">Enemies</h4>
+
+        <p>
+            A basic state machine is set up with several states to initiate AI behavior, though more development is
+            needed to fully flesh out enemy AI. I plan to start with three enemy types but aim to add more over time.
+        </p>
+
+        <h5><span class="highlight"> > Small Cyclops</span></h5>
+
+        <p>
+            The first enemy players encounter—a young cyclops with a stick, intent on hitting and eating anything that moves.
+            Its movement and attack patterns are simple.
+        </p>
+
+        <div class="gif-container small-gif">
+            <img src="../Images/ReachThePeak/SmallBlackCyclop.gif" />
+        </div>
+
+        <h5><span class="highlight"> > Red Glareling</span></h5>
+
+        <p>
+            This little red ball has laser eyes and attacks from a distance, retreating if players get too close.
+        </p>
+
+        <div class="gif-container small-gif">
+            <img src="../Images/ReachThePeak/RedGlareling.gif" />
+        </div>
+
+        <h5><span class="highlight"> > Big Cyclops</span></h5>
+
+        <p>
+            Once players have defeated enough young cyclopes, their older, faster, and stronger siblings will appear
+        </p>
+
+        <div class="gif-container small-gif">
+            <img src="../Images/ReachThePeak/BigBlackCyclop.png" />
+        </div>
+
+        <hr class="empty-divider small-divider">
+
+
+
+        <div id="dungeonGeneration"></div>
+
+
+        <hr class="empty-divider small-divider">
+
+
+        <h4 id="">Simple Procedural Dungeon Generation</h4>
+
+        <p>
+            I have no experience in procedural generation and aim to develop an endless dungeon that grows more challenging as players
+            progress, but since I work on this alone, I don't have the time to do this yet. So, I’m using the
+            <a href="https://github.com/OndrejNepozitek/Edgar-Unity">Edgar Package</a>, with plans to implement my own generator in the future.
+            While Edgar provides a solid foundation, adjustments will need to be made.
+        </p>
+
+
+
+        <hr class="empty-divider small-divider">
 
 
         <div class="project-credits">

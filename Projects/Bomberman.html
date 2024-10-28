@@ -4,7 +4,7 @@
     <meta charset="UTF-89">
     <meta http-equiv="x-ua-compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Binary Bandits</title>
+    <title>Bomberman</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="ProjectStyle.css">
     <script src="https://kit.fontawesome.com/00d7ca3016.js" crossorigin="anonymous"></script>
@@ -26,65 +26,81 @@
         <h1 class="title">Bomberman</h1>
 
 
-        <p>This is the description for Bomberman.</p>
+        <p>
+            The classic Bomberman game, first released in 1985s, is a maze-based action game where players control Bomberman, a character who places bombs to destroy obstacles and defeat enemies. Set in a grid-like arena, the goal is to clear all enemies and navigate through the maze while avoiding bomb explosions, which can harm the player too. Power-ups scattered throughout the levels enhance Bomberman's abilities, like increasing bomb range or allowing multiple bombs at once.
+        </p>
 
+        <p>
+            This game was made with the Jotar2D Engine in c++.
+        </p>
+
+
+
+        <h4>Enemies</h4>
+
+        <p>
+            There are 4 types of enemies,  while some are slow and/or roam randomly in the level, others are fast and/or chase the player when seen. The enemies use the State pattern to change between their behaviours. The AI uses the <span class="highlight">A* algorithm</span> for path finding
+        </p>
+
+        <h4>JSON Loading and Saving</h4>
+
+        <p>
+            By using the Nlohmann Json library, I made it so that the levels, texture paths, enemy info, most variables values for the components are loaded through JSON.
+        </p>
+        <p>
+            Through the menu you can acces the highscores, which are loaded through json and when you die, you can save a score with a name to the JSON file.
+        </p>
 
         <!--<div class="tab-titles">
-            <p class="tab-links active-link" onclick="opentab('A*')">A*</p>
-            <p class="tab-links" onclick="opentab('SoundWithThreads')">Sound With Threads</p>
-            <p class="tab-links" onclick="opentab('ServiceLocator')">Education</p>
-        </div>
+        <p class="tab-links active-link" onclick="opentab('A*')">A*</p>
+        <p class="tab-links" onclick="opentab('SoundWithThreads')">Sound With Threads</p>
+        <p class="tab-links" onclick="opentab('ServiceLocator')">Education</p>
+    </div>
 
 
-        <div class="tab-contents active-tab" id="skills">
-            <ul>
-                <li><span>GD</span><br>Game Developer/programmer</li>
-                <li><span>Unity</span><br>Games</li>
-                <li><span>Unreal Engine 5</span><br>Games</li>
-            </ul>
-        </div>
-        <div class="tab-contents" id="experience">
-            <ul>
-                <li><span>2020- Current</span><br>DAE Student</li>
-            </ul>
-        </div>
-        <div class="tab-contents" id="education">
-            <ul>
-                <li><span>Secundairy School</span><br>Wetenschappen Wiskunde - Sint-GummarusCollege</li>
-                <li><span>Univeristy</span><br>DAE</li>
-            </ul>
-        </div>-->
+    <div class="tab-contents active-tab" id="skills">
+        <ul>
+            <li><span>GD</span><br>Game Developer/programmer</li>
+            <li><span>Unity</span><br>Games</li>
+            <li><span>Unreal Engine 5</span><br>Games</li>
+        </ul>
+    </div>
+    <div class="tab-contents" id="experience">
+        <ul>
+            <li><span>2020- Current</span><br>DAE Student</li>
+        </ul>
+    </div>
+    <div class="tab-contents" id="education">
+        <ul>
+            <li><span>Secundairy School</span><br>Wetenschappen Wiskunde - Sint-GummarusCollege</li>
+            <li><span>Univeristy</span><br>DAE</li>
+        </ul>
+    </div>-->
 
 
-
-
-        <div>
-            <h3>Technical Details</h3>
-            <p>Some technical details about Project 5.</p>
-        </div>
 
 
     </div>
 
 
-    <script>
-        var tablinks = document.getElementsByClassName("tab-links")
-        var tabcontents = document.getElementsByClassName("tab-contents")
-        function opentab(tabname) {
-            for (tablink of tablinks) {
-                tablink.classList.remove("active-link")
+        <script>
+            var tablinks = document.getElementsByClassName("tab-links")
+            var tabcontents = document.getElementsByClassName("tab-contents")
+            function opentab(tabname) {
+                for (tablink of tablinks) {
+                    tablink.classList.remove("active-link")
+                }
+                for (tabcontent of tabcontents) {
+                    tabcontent.classList.remove("active-tab")
+                }
+
+                event.currentTarget.classList.add("active-link")
+                document.getElementById(tabname).classList.add("active-tab");
+
+
             }
-            for (tabcontent of tabcontents) {
-                tabcontent.classList.remove("active-tab")
-            }
 
-            event.currentTarget.classList.add("active-link")
-            document.getElementById(tabname).classList.add("active-tab");
-
-
-        }
-
-    </script>
+        </script>
 
 
 </body>

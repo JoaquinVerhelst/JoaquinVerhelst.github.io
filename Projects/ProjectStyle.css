@@ -13,7 +13,7 @@ body {
     /*background: #080808;*/
     color: #fff;
     font-family: 'Press Start 2P', 'Roboto', sans-serif;
-    font-size: 14px;
+    font-size: 13px;
     background: linear-gradient(270deg, #ff6b6b, #f7c8a9);
     background-size: 400% 400%;
     animation: gradientAnimation 15s ease infinite;
@@ -21,7 +21,7 @@ body {
 
     margin: 40px auto;
     /*max-width: 800px;*/
-    line-height: 1.8;
+    line-height: 2;
     padding: 0 100px;
 }
 @keyframes gradientAnimation {
@@ -36,6 +36,13 @@ body {
     100% {
         background-position: 0% 50%;
     }
+}
+
+
+
+.highlight {
+    /*background-color: red;*/
+    color: red;
 }
 
 /* ----------------------------General stuff------------------------------------*/
@@ -60,14 +67,20 @@ body {
     text-align: left;
 }
 
+.project-info h5,
+.project-info h4,
 .project-info h3,
 .project-info h2,
 .project-info p {
     padding: 10px 20px; /* Add padding around text elements */
     /* Reset margin to avoid extra space */
-
 }
 
+
+
+
+
+.project-info h4,
 .project-info h2,
 .project-info h3 {
     text-decoration: underline;
@@ -160,24 +173,37 @@ body {
 }
 
 
-    .gif-container img:nth-child(odd):last-child {
-        margin: 0 auto;
 
-    }
-
-
-    .gif-container video {
-        width: calc(50% - 10px);
-        height: auto;
-        border-radius: 20px;
-        display: block;
-        transition: all 0.3s ease-in-out;
-    }
+.small-gif img {
+    width: calc(30% - 10px);
+    height: auto;
+    border-radius: 20px;
+    display: block;
+    transition: all 0.3s ease-in-out;
+}
 
 
-        .gif-container video:nth-child(odd):last-child {
-            margin: 0 auto;
-        }
+
+
+
+.gif-container img:nth-child(odd):last-child {
+    margin: 0 auto;
+
+}
+
+
+.gif-container video {
+    width: calc(50% - 10px);
+    height: auto;
+    border-radius: 20px;
+    display: block;
+    transition: all 0.3s ease-in-out;
+}
+
+
+.gif-container video:nth-child(odd):last-child {
+    margin: 0 auto;
+}
 
 .video-container {
     width: 100%; /* Adjust the width as needed */
@@ -188,6 +214,37 @@ body {
 video {
     width: 100%; /* Make the video responsive */
     border-radius: 10px; /* Optional: Add some rounded corners */
+}
+
+
+
+.list ul {
+    list-style-type: disc; /* Use bullets for list items */
+    padding-left: 20px; /* Add padding to align the list items */
+    color: #ffffff; /* Set text color */
+}
+
+.list ul li {
+    margin-bottom: 10px; /* Add space between list items */
+    font-size: 13px; /* Adjust font size */
+}
+
+.list ul li a {
+    color: #ff004f; /* Set link color */
+    text-decoration: none; /* Remove underline from links */
+}
+
+.list ul li a:hover {
+    text-decoration: underline; /* Underline links on hover */
+}
+
+.list.small ul li {
+    margin-bottom: 6px; /* Add space between list items */
+    font-size: 11px; /* Adjust font size */
+}
+
+.list.small ul li a:hover {
+    text-decoration: none; /* Underline links on hover */
 }
 
 
@@ -240,15 +297,21 @@ nav ul li a:hover::after {
 /* ----------------------------Credits / Tables ------------------------------------*/
 
 .project-credits {
+    display: flex; /* Use flexbox to center content */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically if needed */
     text-align: center;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 
 .project-credits table {
-    position: relative;
+    border-collapse: collapse; /* Remove gaps between table cells */
+    width: auto; /* Allow table to take its natural width */
     margin: 0 auto;
-    max-width: 800px; /* Adjust max-width as needed */
-    width: 100%; /* Allow tables to take full width within max-width */
+    background-color: #121212;
+    color: #ffffff;
 }
 
 .original-table table {
@@ -409,11 +472,107 @@ nav ul li a:hover::after {
 
 
 
+/* ------------------------Code Samples ----------------------------*/
 
 
 
 
+/* Container styling */
+.code-container {
+    background-color: #1e1e1e;
+    border-radius: 5px;
+    padding: 20px;
+    overflow-x: auto;
+}
 
+/* Code styling */
+pre, code {
+    color: #d4d4d4;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 14px;
+    white-space: pre-wrap;
+}
+
+/* Specific syntax highlighting for VS Code style */
+.code-vs .keyword {/* Keywords like for, if, return */
+    color: hotpink;
+}
+
+.code-vs .objType { /* Data types like int, float */
+    color: #4ec9b0;
+}
+
+.code-vs .type { /* Data types like int, float */
+    color: royalblue;
+}
+
+
+.code-vs .object { 
+    color: deepskyblue;
+}
+
+.code-vs .function { /* Function names */
+    color: #dcdcaa;
+}
+
+.code-vs .string { /* Strings */
+    color: #ce9178;
+}
+
+.code-vs .comment { /* Comments */
+    color: #6a9955;
+    font-style: italic;
+}
+
+.code-vs .number { /* Numbers */
+    color: #b5cea8;
+}
+
+.code-vs .operator { /* Operators like +, -, *, / */
+    color: #d4d4d4;
+}
+
+
+/* CSS classes to use with <span> in HTML for syntax highlighting */
+pre code .keyword {
+    color: deepskyblue;
+
+}
+
+pre code .object {
+    color: #569cd6;
+    font-weight: bold;
+}
+
+pre code .objType {
+    color: #4ec9b0;
+}
+
+.code-vs .type { /* Data types like int, float */
+    color: royalblue;
+}
+
+pre code .function {
+    color: #dcdcaa;
+}
+
+pre code .string {
+    color: #ce9178;
+}
+
+pre code .comment {
+    color: #6a9955;
+    font-style: italic;
+}
+
+pre code .number {
+    color: #b5cea8;
+}
+
+pre code .operator {
+    color: #d4d4d4;
+    font-weight: bold;
+}
 
 
 

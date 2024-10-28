@@ -4,7 +4,7 @@
     <meta charset="UTF-89">
     <meta http-equiv="x-ua-compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Binary Bandits</title>
+    <title>Jotar2DEngine</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="ProjectStyle.css">
     <script src="https://kit.fontawesome.com/00d7ca3016.js" crossorigin="anonymous"></script>
@@ -24,16 +24,201 @@
         </nav>
         <h1 class="title">Jotar 2D Engine</h1>
 
+        <p>
+            The Jotar2D Engine is a simple 2D game development engine in C++ that has been my learning ground for C++ programming and design patterns. The engine includes essential features for building and managing a 2D game:
+        </p>
 
-        <p>This is the description for Jotar 2D Engine.</p>
-        <div>
-            <h3>Technical Details</h3>
-            <p>Some technical details about Jotar 2D Engine.</p>
+        <hr class="empty-divider small-divider">
+
+        <div class="list small">
+            <ul>
+                <li>Game Loop and Scene Manager for controlling game flow and scene transitions</li>
+                <li>Component System and Scene Graph for flexible object behaviors and structures</li>
+                <li>Input System supporting controllers with commands</li>
+                <li>Observer Pattern for event-driven responses</li>
+                <li>Simple Collision Manager for managing game object interactions</li>
+                <li>Sound System utilizing threads to handle audio</li>
+                <li>World Time Manager to track game time</li>
+                <li>Renderer with Split Screen support</li>
+            </ul>
         </div>
-        <div>
-            <h3>Code Explanation</h3>
-            <pre><code>&lt;div&gt;Sample code for Project 1&lt;/div&gt;</code></pre>
+
+        <hr class="empty-divider small-divider">
+
+        <h2>Design Choices</h2>
+
+        <hr class="empty-divider small-divider">
+
+        <h3>Game Loop and Scene Manager</h3>
+
+        <p>
+            The game loop runs in the following sequence:
+        </p>
+
+        <p>
+            Time Update -> Input -> Fixed Update Collision -> Fixed Update Components -> Update -> Late Update -> Sound Update -> Render -> Destroyed Objects Clean Up -> Input Clear Frame Events
+
+        </p>
+
+        <p>
+            The Scene Manager is a singleton that helps load and manage scenes. Currently, a Start() function must be called manually when loading a new scene, though I may change this in the future for better integration with the engine.
+        </p>
+
+        <h3>Component System and Scene Graph</h3>
+
+        <p>
+            The engine’s component-based architecture, combined with a scene graph, enables easy customization and reuse of game object behaviors. Each object automatically includes a transform component, and additional components, like texture or collider, can be added as needed.
+        </p>
+
+        <p>
+            For example, a player object can be created with some components, and to remove them:
+        </p>
+
+        <div class="code-container">
+            <pre><code class="code-vs">
+
+<span class="type">auto</span> <span class="object">scene</span> = Jotar::<span class="objType">SceneManager</span>::<span class="function">GetInstance()</span>.<span class="function">CreateScene("scene1")</span>; <span class="comment">// Creating the scene</span>
+
+<span class="type">auto</span> <span class="object">playerObj</span> = <span class="object">scene</span>.<span class="function">CreateGameObject("Bomberman")</span> <span class="comment">// Creating the GameObject</span>
+<span class="object">playerObj</span>-><span class="function">AddComponent</span><<span class="objType">TextureComponent</span>>( ...);
+<span class="object">playerObj</span>-><span class="function">AddComponent</span><<span class="objType">ColliderComponent</span>>(...);
+
+<span class="keyword">if</span> (<span class="object">playerObj</span>-><span class="function">HasComponent</span><<span class="objType">ColliderComponent</span>>())
+{
+        <span class="object">playerObj</span>-><span class="function">RemoveComponent</span><<span class="objType">ColliderComponent</span>>();
+}
+            </code></pre>
         </div>
+
+
+        <p>
+
+            The scene graph allows adding child objects through the SetParent(parent) function or by creating child objects directly from a parent object.
+        </p>
+
+
+        <div class="code-container">
+            <pre><code class="code-vs">
+
+<span class="type">auto</span> <span class="object">HUDObj</span> = <span class="object">scene</span>.<span class="function">CreateGameObject("HUD")</span> <span class="comment">// Creating the parent GameObject</span>
+
+<span class="comment">// Method 1 </span>
+
+<span class="type">auto</span> <span class="object">playerTextObj</span> = <span class="object">scene</span>.<span class="function">CreateGameObject("PlayerText")</span> <span class="comment">// Creating the child GameObject</span>
+<span class="object">playerTextObj</span>-><span class="function">SetParent</span>(<span class="object">HUDObj</span>,..); <span class="comment">// Setting the parent</span>
+
+<span class="comment">// Method 2 </span>
+
+<span class="type">auto</span> <span class="object">fpsCounterObj</span> =  <span class="object">HUDObj</span>-><span class="function">CreateChildGameObject</span>("fpsCounter"); <span class="comment">// Creating the child GameObject and add it as child</span>
+
+<span class="comment">// To remove a child </span>
+
+<span class="object">fpsCounterObj</span>-><span class="function">SetParent</span>(<span class="object">nullptr</span>);
+</code></pre>
+        </div>
+
+
+        <h3>Input system with controller support using the Command pattern</h3>
+
+
+        <p>
+            The input system, compatible with both Xinput for controllers and SDL for keyboard input, uses the pImpl pattern to separate the library specifics from the engine. The Input Manager enables objects to respond to controller or keyboard inputs, and also offers methods like IsKeyUp() and IsControllerButtonUp() for use throughout the game.
+        </p>
+
+
+        <h3>
+            Observer pattern
+        </h3>
+
+
+        <p>
+            The Observer pattern is available in the engine, allowing components to respond to events. For example, a health display component can observe and react to damage events:
+        </p>
+
+        <div class="code-container">
+            <pre><code class="code-vs">
+
+<span class="type">class</span> <span class="objType">HealthDisplayComponent</span> <span class="type">final</span> : <span class="type">public</span> <span class="objType">Component</span>, <span class="type">public</span> <span class="objType">Observer</span><<span class="objType">Event</span>> { <span class="comment">// Add the Observer with the eventType</span>
+
+    <span class="comment">// ... other functions </span>
+
+    <span class="type">void</span> <span class="function">OnNotify</span>(<span class="type">const</span> <span class="objType">Event</span>& <span class="object">event</span>) <span class="type">override</span>; <span class="comment">// override the function</span>
+
+}
+
+
+<span class="type">void</span> Jotar::<span class="objType">HealthDisplayComponent</span>::<span class="function">OnNotify</span>(<span class="type">const</span> <span class="objType">Event</span>& <span class="object">event</span>)
+{
+    <span class="keyword">if</span> (<span class="type">typeid</span>(<span class="object">event</span>)) == <span class="type">typeid</span>(<span class="objType">DamageHealthEvent</span>))
+    {
+            <span class="comment">// ... </span>
+    }
+}
+
+
+</code></pre>
+        </div>
+
+
+        <h3>
+            Collision Manager
+        </h3>
+
+
+        <p>
+            The Collision Manager is a Singleton that tracks colliders in each scene.
+            The observer pattern notifies the collider components when there is a Collision or trigger. The Collider Component itself also Notifies when the Trigger Begins and Ends to anyone that is listening.
+            The Collision Manager also handles RayCasting with a threading pool
+        </p>
+
+        <p>
+            The CollisionManager.cpp FixedUpdate() handles the collisions.
+
+        </p>
+
+        <a href="https://github.com/JoaquinVerhelst/Jotar2DEngine/blob/main/Minigin/CollisionManager.cpp">See CollisionManager.cpp Code</a>
+
+
+        <h3>
+            Sound System
+        </h3>
+
+
+        <p>
+            The sound system uses SDL_Mixer, managed through the pImpl pattern, with the Service Locator pattern enabling sounds to be queued and played using threads. Sounds are enqueued with a simple command and played in the Update() method. Here’s how a sound effect might be added and called:
+        </p>
+
+
+        <a href="https://github.com/JoaquinVerhelst/Jotar2DEngine/blob/main/Minigin/SoundSystem.cpp">See SoundSystem.cpp Code</a>
+
+        <div class="code-container">
+            <pre><code class="code-vs">
+
+<span class="objType">SoundServiceLocator</span>::<span class="function">GetSoundSystem</span>().<span class="function">AddSound</span>("Path", "name"); <span class="comment">// To Add Sound</span>
+
+<span class="objType">SoundServiceLocator</span>::<span class="function">GetSoundSystem</span>().<span class="function">Play</span>("name"); <span class="comment">// To play the Sound</span>
+
+</code></pre>
+        </div>
+
+
+        <h3>
+            Renderer
+        </h3>
+
+
+        <p>
+            The renderer, based on SDL, supports layering textures and using multiple cameras for split-screen. Each camera can be independently configured, although the layout of the camera’s view rectangle must be set up manually. HUD textures are rendered once, regardless of the number of cameras.
+        </p>
+
+        <h3>
+            World Time Manager
+        </h3>
+
+
+        <p>
+            This singleton provides access to total time, FPS, and delta time across the game, eliminating the need to pass these values explicitly through update methods.
+        </p>
     </div>
 </body>
 </html>
