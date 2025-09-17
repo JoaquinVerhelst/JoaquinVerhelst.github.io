@@ -798,7 +798,7 @@ nav ul li a:hover::after{
 
 .btn{
     display: block;
-    margin: 50px auto;
+    margin: 10px auto;
     width: fit-content;
     border: 1px solid darkred;
     padding: 14px 50px;
@@ -814,8 +814,11 @@ nav ul li a:hover::after{
 }
 
 .btn.btn2 {
-    margin: 10px auto;
-    display: inline-block;
+    display: inline-flex; /* makes the text sit centered vertically */
+    align-items: center;
+    justify-content: center;
+    padding: 14px 40px; /* slightly smaller padding for better alignment */
+    margin: 0; /* reset auto margins */
     background: black;
 }
 
@@ -823,7 +826,46 @@ nav ul li a:hover::after{
     background: darkred;
 }
 
+.icon-btn-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px; /* space between icon and button */
+    /*margin-top: 30px;*/ /* optional */
+}
 
+.icon-btn-wrapper a {
+    text-decoration: none;
+}
+
+.icon {
+    margin-top: -6px;
+    font-size: 45px;
+    color: white;
+    transition: transform 0.3s;
+    align-items: center;
+}
+
+.icon:hover {
+    color: darkred;
+    transform: scale(1.15, 1.15);
+}
+
+
+.social-icons a {
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: white;
+    display: inline-block;
+    transition: transform 0.3s
+
+}
+
+.social-icons a:hover {
+    color: darkred;
+    transform: translateY(-5px);
+}
 
 .contact-left {
     flex-basis: 35%;

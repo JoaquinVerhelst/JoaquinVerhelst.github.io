@@ -97,7 +97,7 @@ body {
 
 
 
-
+.project-info h5,
 .project-info h4,
 .project-info h2,
 .project-info h3 {
@@ -161,6 +161,7 @@ body {
     display: flex; /* Optional: Center the icon */
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
+    gap: 12px;
 }
 
 .link-container a {
@@ -192,7 +193,9 @@ body {
 
 
 
+
 .small-gif img {
+    margin: 0 auto; /* Center the video horizontally */
     width: calc(30% - 10px);
     height: auto;
     border-radius: 20px;

@@ -1,0 +1,279 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-89">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reach The Peak</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="ProjectStyle.css">
+    <script src="https://kit.fontawesome.com/00d7ca3016.js" crossorigin="anonymous"></script>
+</head>
+
+
+<body>
+    <div class="project-info">
+        <nav>
+
+            <ul id="menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#portofolio">Projects</a></li>
+                <li><a href="../index.html#skills">Skills</a></li>
+            </ul>
+
+        </nav>
+
+        <h1 class="title">Pack It Perfect!</h1>
+
+        <div class="link-container">
+            <a href="https://www.instagram.com/packitperfectvr/"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@packitperfectvr"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+
+        <hr class="empty-divider small-divider">
+
+        <p>
+            Pack it Perfect is a quirky and challenging VR puzzle game where your objective is to fit a variety of odd-shaped items into a single suitcase.
+            But it’s not just about finding the right space, some items react when placed next to each other. For example, certain objects might expand, melt,
+            or trigger strange interactions depending on what they’re touching. Figuring out how to pack everything without setting off chaos is the real puzzle.
+        </p>
+
+        <hr class="empty-divider small-divider">
+
+        <h2>About the Game</h2>
+
+        <p>
+            This VR game was made in Unity on my internship at AlterEyes, together with the other interns (1 coders and 1 artist) we had full control of design
+            and made this game from prototype to production and also ready for release.
+            Unfortunaly it isn't released yet but it should be available soon on Meta Quest Store!
+        </p>
+
+        <hr class="empty-divider small-divider">
+
+        <div class="gif-container">
+            <video autoplay loop muted>
+                <source src="../Images/Pip/CloudGrid.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <hr class="empty-divider">
+
+        <h2>What I Did And Mechanics</h2>
+
+        <p>
+            During my time on Pack It Perfect, I contributed extensively to both the gameplay systems and the overall technical stability of the project.
+            My work spanned UI/UX design, game mechanics, save systems, and bug fixing, with a strong focus on problem-solving and
+            refactoring for long-term maintainability.
+        </p>
+
+        <hr class="empty-divider small-divider">
+
+        <!-- ----------------------------RULE SYSTEM - ----------------------------------- -->
+
+        <h4> Rule System </h4>
+
+
+        <p>
+            This system first iteration during prototype was not written by me, but I did refactor and rewrite it during production phase.
+        </p>
+
+
+        <p>
+            Items consists of three types, default (nothing special), Rule Holder (the item that will do something when triggered with the correct trigger type,
+            each rule holder has a Rule scriptable Object attached to it), and the trigger (the item that will trigger the rule in the rule holders if their trigger
+            type is the correct). Trigger types is an Enum that will tell the rile holder rand trigger at which trigger type they should react to, the values could be:
+            cold, fire, predator, ….
+        </p>
+
+
+        <p>
+            Each rule has different ways it needs to react, for example, the expand rule, only needs to react when there is something near it to trigger,
+            so boolean approach, but other items needs to react every time something happens, so like a trigger approach.
+        </p>
+
+
+        <p>
+            We made it in a way where we only need to write the logic of what it needs to do and it will automatically do the
+            approach it is designed to do through a simple boolean with the scriptable Object.
+        </p>
+
+        <hr class="empty-divider small-divider">
+
+        <div class="small-gif">
+            <img src="../Images/Pip/FlippingOut.gif" />
+        </div>
+
+        <hr class="empty-divider">
+
+        <!-- ---------------------------Expansion Rule- ----------------------------------- -->
+
+
+        <h4> Expansion Rule (objects expand in size near specific neighbors) </h4>
+
+
+        <p>
+            Goal: Certain objects should instantly grow when placed near specific “trigger” objects, doubling their size to create more interesting packing challenges.
+        </p>
+
+
+        <p>
+            The rule system scans for valid the placed object’s neighbours to check if it’s an expansion trigger.  When a match is found, the expanding object scales its
+            mesh and colliders proportionally fast to give it a snappy feeling. The scaling logic bypasses Unity’s default transform scaling for some colliders,
+            using manual resizing to avoid hierarchy bugs (especially with nested mesh colliders).
+        </p>
+
+
+        <p>
+            Once the object grows, it runs a bounds check if it’s outside of the suitcase. If any part exceeds those limits,
+            the object is repositioned or ejected out i fit doesn’t find space. If other items overlap the expanded item,
+            those items will be thrown out instead.
+        </p>
+
+        <hr class="empty-divider small-divider">
+
+        <div class="gif-container">
+            <video autoplay loop muted>
+                <source src="../Images/Pip/PlantThrownByExpand.mp4" type="video/mp4">
+            </video>
+
+            <video autoplay loop muted>
+                <source src="../Images/Pip/spongeExpand.mp4" type="video/mp4">
+            </video>
+        </div>
+        <hr class="empty-divider">
+
+
+
+        <h5> Blowfish – More Than Just Size </h5>
+
+
+        <p>
+            Goal: Variant of the expansion rule, but with a visual twist. The blowfish “inflates” and changes its mesh to a puffed-up model.
+        </p>
+
+        <hr class="empty-divider small-divider">
+
+        <div class="small-gif">
+            <img src="../Images/Pip/PufferfishExand.gif" />
+        </div>
+
+        <hr class="empty-divider">
+
+
+
+        <!-- --------------------------- Beach Ball- ----------------------------------- -->
+
+
+        <h4> Beach Ball – Throw to Grow, Squeeze to Shrink </h4>
+
+        <p>
+            Goal: Make players physically interact with the beachball for it to change sizes. Throw it up for size increase, compress  it with two hands to shrink.
+        </p>
+        <p>
+            I tracked the ball’s upwards velocity to detect throws, triggering an expansion when it crossed a speed and small time threshold.
+            For shrinking, I measured the distance between the player’s hands while holding the ball. When that distance dropped below a set threshold,
+            the ball smoothly scaled down.
+        </p>
+
+
+        <hr class="empty-divider small-divider">
+
+        <div class="small-gif">
+            <img src="../Images/Pip/RandomItemsHitting2.gif" />
+        </div>
+
+        <hr class="empty-divider">
+
+
+
+        <!-- --------------------------- Ice Cube ----------------------------------- -->
+
+
+        <h4> Ice Cube – Heat & Cold</h4>
+
+        <p>
+            Goal: Ice melts unless kept cold, but heat overrides cold, even if both are nearby.
+        </p>
+        <p>
+            Each ice cube constantly scans its surroundings for “temperature sources”, these are triggers with heat or cold type. Cold sources stops the melting, so without a cold source nearby it will metl. Hot sources makes the icu cube mellt instantly, even if there is a cold source, so you have to watch out where you place hot objects.
+        </p>
+
+        <hr class="empty-divider small-divider">
+
+        <div class="small-gif">
+            <img src="../Images/Pip/RandomItemsHitting.gif" />
+        </div>
+
+        <hr class="empty-divider">
+
+        <!-- --------------------------- Custom Distance Grabber ----------------------------------- -->
+
+
+        <h4> Custom Distance Grabber </h4>
+
+        <p>
+            Goal: Give players the ability to grab objects from far away.
+        </p>
+        <p>
+            Even though we used the Auto Hands VR package to handle the hands and grabbing, their Distance grabber wasn’t  working the way we needed it to, so based on the Auto hands package, I created a simple ray-based targeting system with a LineRenderer beam to know which item you’re about to grab, haptic feedback on lock, and grab confirmation when the player pressed the grab button. When grabbing the item will fly towards the hand in a fast and satisfying way.
+        </p>
+
+
+
+        <hr class="empty-divider small-divider">
+
+        <div class="small-gif">
+            <img src="../Images/Pip/ejectButton.gif" />
+        </div>
+
+        <hr class="empty-divider">
+
+        <!-- --------------------------- UI And Player ----------------------------------- -->
+
+
+        <h4> UI & Player Experience And Save Data</h4>
+
+        <p>
+            UI Development with Doozy – Learned and implemented the Doozy UI package to create flexible and scalable menus. Built the Level Selector, interactive UI elements, and Completion Menu that displays stars earned after a level.
+        </p>
+        <p>
+            Designed and implemented a 3D loading screen with smooth fade transitions for immersive scene changes.
+        </p>
+        <p>
+            Created and refined the Options Menu, eventually reimplementing it using proven architecture from a previous project for efficiency.
+        </p>
+
+
+
+
+
+        <div class="project-credits">
+            <table class="original-table">
+                <thead>
+                    <tr>
+                        <th>Engine</th>
+                        <th>Language</th>
+                        <th>Programmers</th>
+                        <th>Artists</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Unity</td>
+                        <td>VR - C#</td>
+                        <td>Joaquin Verhelst</td>
+                        <td><a href="#">Çağla Akçay</a></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"></td>
+                        <td><a href="#">Sebastian Surmont</a></td>
+
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+</body>
+</html>
